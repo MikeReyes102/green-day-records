@@ -15,6 +15,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/users', require('./routes/userRoutes'));
+
 // Default Test Route
 app.get('/', (req, res) => {
   res.send('Green Day Records API is up and running!');
