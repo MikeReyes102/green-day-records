@@ -17,6 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use('/users', require('./routes/userRoutes'));
+app.use('/products', require('./routes/productRoutes')); 
 
 // Default Test Route
 app.get('/', (req, res) => {
