@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const { protect, adminOnly } = require('../middleware/authMiddleware');
 
-// Routes for product management
+router.get('/', productController.getAllProducts);
+router.get('/:id', productController.getProductById);
 
-router.get('/', productController.getAllProducts); // Get all products
-router.get('/:id', productController.getProductById); // Get a single product by ID
-router.post('/', productController.addProduct); // Add a new product
-router.put('/:id', productController.updateProduct); // Update a product by ID
-router.delete('/:id', productController.deleteProduct); // Delete a product by ID
+// Admin routes
+router.post('/', protect, adminOnly, productController.addProduct); 
+router.put('/:id', protect, adminOnly, productController.updateProduct); 
+router.delete('/:id', protect, adminOnly, productController.deleteProduct); 
 
 module.exports = router;
