@@ -8,7 +8,7 @@ const Navbar = () => {
         Green Day Records
       </Link>
 
-      {/* Auth Buttons */}
+      {/* Navigation Links */}
       <div className="flex gap-4">
         <Link to="/login">
           <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md transition">
