@@ -1,1 +1,108 @@
 @import "tailwindcss";
+
+/* Dark Mode */
+.dark {
+  --bg-color: #1a1a1a;
+  --secondary-bg-color: #333333; /* dark gray for navigation */
+  --text-color: #ffffff;
+  --accent-color: #00a86b; /* Emerald Green */
+  --secondary-accent: #ff6b81; /* Soft Rose Pink */
+}
+
+/* Light Mode */
+.light {
+  --bg-color: #f5f5f5; /* WhiteSmoke */
+  --secondary-bg-color: #eaeaea; /* Light gray for navigation */
+  --text-color: #333333; /* Dark gray for readability */
+  --accent-color: #3fbf72; /* Mint Green */
+  --secondary-accent: #ff6b81; /* Pink */
+}
+
+/* Apply Variables Globally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Contair Styles */
+.container {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: #333333 0px 2px 5px;
+}
+
+/* Button Styles */
+
+/* Primary Button */
+.primary-btn {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-accent);
+}
+
+/* Secondary Button */
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: var(--secondary-accent);
+  color: var(--text-color);
+  border-color: var(--secondary-accent);
+}
+
+/* Navigation Bar */
+
+.navbar {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    box-shadow: #333333 0px 2px 5px;
+}
+
+.search-bar {
+  background-color: var(--secondary-bg-color);
+  color: var(--search-text-color);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid var(--text-color);
+}
+
+
+/* Filter Panel */
+
+.filter-panel {
+    margin-top: 25px;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    box-shadow: #333333 2px 2px 5px;
+}   
+
+/* Card Styles */
+.card {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: #333333 0px 2px 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: #333333 0px 10px 20px;
+}
+

@@ -1,6 +1,6 @@
 const FilterPanel = () => {
   return (
-    <aside className="w-64 bg-gray-800 text-white p-4 h-screen">
+    <aside className="w-64 filter-panel p-4 h-screen">
       <h2 className="text-xl font-bold mb-4">Filter Options</h2>
       
       {/* Category Filter */}
