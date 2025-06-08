@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Permanent+Marker&display=swap');
 @import "tailwindcss";
+
+
+/* Font Styles */
+:root {
+  --font-body: 'Corben', sans-serif;
+  --font-heading: 'Permanent Marker', sans-serif;
+}
 
 /* Dark Mode */
 .dark {
   --bg-color: #1a1a1a;
   --secondary-bg-color: #333333; /* dark gray for navigation */
   --text-color: #ffffff;
-  --accent-color: #00a86b; /* Emerald Green */
+  --accent-color: #3fbf99; /* Mint Green */
   --secondary-accent: #ff6b81; /* Soft Rose Pink */
 }
 
@@ -14,7 +22,7 @@
   --bg-color: #f5f5f5; /* WhiteSmoke */
   --secondary-bg-color: #eaeaea; /* Light gray for navigation */
   --text-color: #333333; /* Dark gray for readability */
-  --accent-color: #3fbf72; /* Mint Green */
+  --accent-color: #3fbf99; /* Mint Green */
   --secondary-accent: #ff6b81; /* Pink */
 }
 
@@ -22,7 +30,13 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: var(--font-body);
 }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
 
 /* Contair Styles */
 .container {

@@ -14,15 +14,22 @@ const App = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login theme={theme} />} />
-        <Route path="/register" element={<Register theme={theme}/>} />
-        <Route path="/dashboard" element={<Dashboard theme={theme} />} />
-        <Route path="/product" element={<ProductPage theme={theme} />} />
-        <Route path="/account" element={<AccountPage toggleTheme={toggleTheme} theme={theme} />} />
-        <Route path="/cart" element={<CartPage theme={theme} />} />
-      </Routes>
+      {/* Main Wrapper */}
+      <div className="relative min-h-screen">
+        {/* App Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login theme={theme} />} />
+          <Route path="/register" element={<Register theme={theme} />} />
+          <Route path="/dashboard" element={<Dashboard theme={theme} />} />
+          <Route path="/product" element={<ProductPage theme={theme} />} />
+          <Route
+            path="/account"
+            element={<AccountPage toggleTheme={toggleTheme} theme={theme} />}
+          />
+          <Route path="/cart" element={<CartPage theme={theme} />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
