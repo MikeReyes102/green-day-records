@@ -25,6 +25,31 @@ const getProductById = async (req, res) => {
     }
 };
 
+// Search products by title or artist
+
+const searchProducts = async (req, res) => {
+  try {
+    const query = req.query.q;
+
+    if (!query) {
+      return res.status(400).json({ message: "Search query is required." });
+    }
+
+    // Perform a text search
+    const products = await Product.find({ $text: { $search: query } });
+
+    if (products.length === 0) {
+      return res.status(404).json({ message: "No products found." });
+    }
+
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("Error searching products:", error);
+    res.status(500).json({ message: "Server error.", error });
+  }
+};
+
+
 // The following functions are for Admin use only
 // Add, update, and delete product functions
 
@@ -64,4 +89,4 @@ const deleteProduct = async (req, res) => {
     }
 };
 
-module.exports = { addProduct, getAllProducts, getProductById, updateProduct, deleteProduct };
+module.exports = { addProduct, getAllProducts, getProductById, updateProduct, deleteProduct, searchProducts };

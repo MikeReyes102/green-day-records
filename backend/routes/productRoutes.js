@@ -4,7 +4,8 @@ const productController = require('../controllers/productController');
 const { protect, adminOnly } = require('../middleware/authMiddleware');
 
 router.get('/', productController.getAllProducts);
-router.get('/:id', productController.getProductById);
+router.get("/search", productController.searchProducts); // ✅ Search Route First
+router.get("/:id", productController.getProductById);
 
 // Admin routes
 router.post('/', protect, adminOnly, productController.addProduct); 
