@@ -1,20 +1,47 @@
 import { Link, useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 
+import api from "../utils/api";
+
 const Register = () => {
   const { theme } = useTheme();
   const navigate = useNavigate(); // Initialize navigation function
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    navigate("/dashboard"); // Simulate successful registration
+
+    const userData = {
+      name: event.target[0].value.trim(),
+      email: event.target[1].value.trim(),
+      password: event.target[2].value.trim(),
+    };
+
+    try {
+      const result = await api.registerUser(userData);
+
+      if (result.error) {
+        alert(result.error);
+      } else {
+        localStorage.setItem("token", result.token);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
   };
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center ${theme === "dark" ? "bg-background text-text" : "bg-background text-text"}`}>
+    <div
+      className={`min-h-screen flex flex-col items-center justify-center ${
+        theme === "dark" ? "bg-background text-text" : "bg-background text-text"
+      }`}
+    >
       <div className="w-full max-w-md p-6 rounded-lg container">
         <h1 className="text-3xl font-bold text-center">Register</h1>
-        <form className="flex flex-col gap-4 w-full mt-4" onSubmit={handleRegister}>
+        <form
+          className="flex flex-col gap-4 w-full mt-4"
+          onSubmit={handleRegister}
+        >
           <input
             type="text"
             placeholder="Name"
@@ -30,7 +57,10 @@ const Register = () => {
             placeholder="Password"
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
-          <button type="submit" className="px-4 py-2 w-full primary-btn rounded-md transition">
+          <button
+            type="submit"
+            className="px-4 py-2 w-full primary-btn rounded-md transition"
+          >
             Register
           </button>
         </form>
