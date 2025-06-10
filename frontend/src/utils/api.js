@@ -55,15 +55,30 @@ const api = {
   },
   searchProducts: async (query) => {
     const encodedQuery = encodeURIComponent(query);
-    console.log(`Sending search request: ${API_BASE_URL}/products/search?q=${encodedQuery}`);
+    console.log(
+      `Sending search request: ${API_BASE_URL}/products/search?q=${encodedQuery}`
+    );
 
     try {
-      const response = await axios.get(`${API_BASE_URL}/products/search?q=${encodedQuery}`);
+      const response = await axios.get(
+        `${API_BASE_URL}/products/search?q=${encodedQuery}`
+      );
       console.log("Search API Response:", response.data); // ✅ Debugging API Response
       return response.data;
     } catch (error) {
       console.error("Error searching products:", error);
       return [];
+    }
+  },
+  getProductById: async (id) => {
+    try {
+      console.log(`🔍 Sending request to: ${API_BASE_URL}/products/${id}`); // ✅ Debugging API Call
+      const response = await axios.get(`${API_BASE_URL}/products/${id}`);
+      console.log("✅ Product Response:", response.data); // ✅ Debug API Response
+      return response.data;
+    } catch (error) {
+      console.error("❌ Error fetching product by ID:", error);
+      return null;
     }
   }
 };
