@@ -1,17 +1,39 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AccountPage = ({ toggleTheme, theme }) => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const token = localStorage.getItem("token"); // ✅ Get stored auth token
 
-  const mockUser = {
-    name: "John Doe",
-    email: "johndoe@example.com",
-    joined: "March 2023",
-    orders: [
-      { id: 1, title: "Abbey Road", status: "Shipped" },
-      { id: 2, title: "Dark Side of the Moon", status: "Processing" },
-    ],
-  };
+  useEffect(() => {
+    async function fetchUserData() {
+      if (!token) return;
+
+      try {
+        const response = await fetch("http://localhost:5000/users/profile", {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data.user); // ✅ Store user details
+          setOrders(data.orders); // ✅ Store order history with product info
+        } else {
+          console.error(
+            "❌ Failed to fetch account data:",
+            await response.json()
+          );
+        }
+      } catch (error) {
+        console.error("❌ Network Error:", error);
+      }
+    }
+
+    fetchUserData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-text p-6 flex flex-col items-center justify-center">
@@ -19,20 +41,45 @@ const AccountPage = ({ toggleTheme, theme }) => {
         <h1 className="text-3xl font-bold text-center">Account Settings</h1>
 
         {/* Account Details */}
-        <div className="mt-4 text-center">
-          <p className="text-lg font-semibold">Name: {mockUser.name}</p>
-          <p className="text-sm">Email: {mockUser.email}</p>
-          <p className="text-sm">Joined: {mockUser.joined}</p>
-        </div>
+        {user ? (
+          <div className="mt-4 text-center">
+            <p className="text-lg font-semibold">Name: {user.name}</p>
+            <p className="text-sm">Email: {user.email}</p>
+            <p className="text-sm">Joined: {user.joined}</p>
+          </div>
+        ) : (
+          <p className="text-center">Loading account details...</p>
+        )}
 
         {/* Order History */}
         <div className="mt-6">
           <h2 className="text-lg font-semibold">Order History</h2>
-          <ul className="list-disc list-inside text-text">
-            {mockUser.orders.map((order) => (
-              <li key={order.id}>{order.title} - {order.status}</li>
-            ))}
-          </ul>
+          {orders.length > 0 ? (
+            <ul className="list-disc list-inside text-text">
+              {orders.map((order) => (
+                <li key={order._id} className="mt-2">
+                  {" "}
+                  {/* ✅ Add unique key here */}
+                  {order.orderItems.map((item) => (
+                    <p key={item.product._id}>
+                      {" "}
+                      {/* ✅ Assign a unique key to each item */}
+                      {item.quantity}x {item.product.title} by{" "}
+                      {item.product.artist} - ${item.product.price}
+                    </p>
+                  ))}
+                  <p className="text-sm">
+                    Status: {order.orderStatus} | Total: ${order.totalPrice}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    Ordered on {new Date(order.createdAt).toLocaleDateString()}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-center">No orders found.</p>
+          )}
         </div>
 
         {/* Theme Toggle */}

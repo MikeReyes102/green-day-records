@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const Order = require("../models/Order"); // ✅ Import Order model
+const Product = require("../models/Product"); // ✅ Import Product model
 const jwt = require("jsonwebtoken");
 
 const generateToken = (id) => {
@@ -8,7 +10,6 @@ const generateToken = (id) => {
 };
 
 // Register a new user
-
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
   const existingUser = await User.findOne({ email });
@@ -37,22 +38,31 @@ const loginUser = async (req, res) => {
   }
 };
 
-// Get user profile
-
+// Get user profile & order history with populated product details
 const getUserProfile = async (req, res) => {
   if (!req.user) {
-    return res.status(404).json({ message: 'User not found' });
+    return res.status(404).json({ message: "User not found" });
   }
 
-  res.json({
-    name: req.user.name,
-    email: req.user.email,
-    role: req.user.role,
-  });
+  try {
+    const user = await User.findById(req.user._id).select("name email role joined");
+
+    // ✅ Fetch orders AND populate product details (title, artist, price)
+    const orders = await Order.find({ user: req.user._id })
+      .populate({
+        path: "orderItems.product",
+        select: "title artist price",
+      })
+      .select("orderItems totalPrice orderStatus createdAt");
+
+    res.json({ user, orders }); // ✅ Send user info & enriched order history
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching user data" });
+  }
 };
 
 module.exports = {
   registerUser,
   loginUser,
-  getUserProfile
+  getUserProfile,
 };
