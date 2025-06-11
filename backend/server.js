@@ -1,10 +1,14 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const connectDB = require('./config/db');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const connectDB = require("./config/db");
+const Stripe = require("stripe");
 
 // Load environment variables
 dotenv.config();
+
+// Initialize Stripe
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Connect to MongoDB
 connectDB();
@@ -16,13 +20,14 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/users', require('./routes/userRoutes'));
-app.use('/products', require('./routes/productRoutes'));
-app.use("/orders", require("./routes/orderRoutes")); 
+app.use("/users", require("./routes/userRoutes"));
+app.use("/products", require("./routes/productRoutes"));
+app.use("/orders", require("./routes/orderRoutes"));
+app.use("/api", require("./routes/paymentRoutes")); // ✅ Added payment route
 
 // Default Test Route
-app.get('/', (req, res) => {
-  res.send('Green Day Records API is up and running!');
+app.get("/", (req, res) => {
+  res.send("Green Day Records API is up and running!");
 });
 
 // Start server
