@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import ProductPage from "./pages/ProductPage";
 import AccountPage from "./pages/AccountPage";
 import CartPage from "./pages/CartPage";
+import SuccessPage from "./pages/SuccessPage"; // ✅ Import success page
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -28,6 +29,7 @@ const App = () => {
             element={<AccountPage toggleTheme={toggleTheme} theme={theme} />}
           />
           <Route path="/cart" element={<CartPage theme={theme} />} />
+          <Route path="/success" element={<SuccessPage />} /> {/* ✅ Success route added */}
         </Routes>
       </div>
     </Router>

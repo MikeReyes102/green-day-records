@@ -19,8 +19,8 @@ const createCheckoutSession = async (req, res) => {
         },
         quantity: 1,
       })),
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cart",
+      success_url: "http://localhost:5173/success",
+      cancel_url: "http://localhost:5173/cart",
     });
 
     res.json({ url: session.url });

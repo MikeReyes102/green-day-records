@@ -17,6 +17,30 @@ const CartPage = () => {
     setCart(updatedCart);
   }
 
+  const backendURL = "http://localhost:5000/api/create-checkout-session"; // ✅ Explicitly set backend URL
+
+async function handleCheckout() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  try {
+    const response = await fetch(backendURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cart }),
+    });
+
+    const data = await response.json();
+
+    if (data.url) {
+      window.location.href = data.url; // 🚀 Redirect to Stripe Checkout
+    } else {
+      console.error("❌ Checkout Error:", data.error);
+    }
+  } catch (error) {
+    console.error("❌ Network Error:", error);
+  }
+}
+
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
@@ -45,7 +69,7 @@ const CartPage = () => {
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full justify-center">
-          <button className="w-full px-4 py-2 primary-btn rounded-md transition">
+          <button onClick={handleCheckout} className="w-full px-4 py-2 primary-btn rounded-md transition">
             Checkout
           </button>
           <button onClick={() => navigate("/dashboard")} className="w-full px-4 py-2 secondary-btn rounded-md transition">
