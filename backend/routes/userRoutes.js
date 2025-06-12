@@ -12,15 +12,15 @@ const {
 const router = express.Router();
 const { protect, adminOnly } = require("../middleware/authMiddleware");
 
-// User Authentication
-router.post("/register", registerUser);
-router.post("/login", loginUser);
-router.get("/profile", protect, getUserProfile);
+// User Authentication routes
+router.post("/register", registerUser); // Register a new user
+router.post("/login", loginUser); // Login user
+router.get("/profile", protect, getUserProfile); // Get logged-in user's profile
 
-// ✅ Admin User Management Routes
+// Admin User Management Routes
 router.get("/", protect, adminOnly, getAllUsers); // Get all users (Admin-only)
-router.get("/:id", protect, adminOnly, getUserById); // Get a specific user by ID
-router.patch("/:id", protect, adminOnly, updateUser); // Update user details
-router.delete("/:id", protect, adminOnly, deleteUser); // Delete a user
+router.get("/:id", protect, adminOnly, getUserById); // Get a specific user by ID (Admin-only)
+router.patch("/:id", protect, adminOnly, updateUser); // Update user details (Admin-only)
+router.delete("/:id", protect, adminOnly, deleteUser); // Delete a user (Admin-only)
 
 module.exports = router;

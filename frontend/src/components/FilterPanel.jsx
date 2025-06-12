@@ -1,3 +1,6 @@
+// NOTE: This FilterPanel component is a future feature in development and is not live yet.
+// It provides UI controls for filtering products by category, price range, and availability.
+
 const FilterPanel = () => {
   return (
     <aside className="w-64 filter-panel p-4 h-screen">

@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme"; // ✅ Import theme hook
 
+// AdminDashboard component for admin overview and navigation
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme(); // ✅ Get theme directly
+  const { theme } = useTheme(); // Get current theme
 
+  // Dashboard statistics (could be fetched from API in real app)
   const stats = [
     { title: "Total Users", count: 1_542, color: "bg-[var(--accent-color)]" },
     {
@@ -13,10 +15,11 @@ const AdminDashboard = () => {
       color: "bg-[var(--secondary-accent)]",
     },
     { title: "Revenue", count: "$8,723", color: "bg-yellow-500" },
-    { title: "Total Products", count: 312, color: "bg-purple-600" }, // ✅ New metric
-    { title: "Pending Orders", count: 17, color: "bg-red-500" }, // ✅ New metric
+    { title: "Total Products", count: 312, color: "bg-purple-600" }, // New metric
+    { title: "Pending Orders", count: 17, color: "bg-red-500" }, // New metric
   ];
 
+  // Handle logout: clear auth info and redirect to login
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
@@ -32,6 +35,7 @@ const AdminDashboard = () => {
         </h2>
         <hr className="my-4 border-gray-500" />
 
+        {/* Navigation links for admin sections */}
         <nav className="mt-6">
           <ul className="space-y-4">
             <li className="flex items-center gap-3 px-4 py-3 rounded hover:bg-[var(--accent-color)] transition">
@@ -62,6 +66,7 @@ const AdminDashboard = () => {
               </button>
             </li>
 
+            {/* Logout button */}
             <li className="flex items-center gap-3 px-4 py-3 rounded hover:bg-red-600 transition">
               <span className="material-icons text-lg">logout</span>
               <button

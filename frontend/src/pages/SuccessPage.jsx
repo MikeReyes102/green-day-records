@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// SuccessPage component displays order confirmation and saves order to backend
 const SuccessPage = () => {
   const navigate = useNavigate();
 
@@ -8,20 +9,22 @@ const SuccessPage = () => {
     const backendURL = "http://localhost:5000/orders";
     const token = localStorage.getItem("token");
 
+    // Save the order to the backend when the page loads
     async function saveOrder() {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
       if (cart.length === 0 || !token) return;
 
-      // ✅ Ensure correct data format before sending
+      // Format order items for backend (product ID, quantity, price)
       const formattedOrderItems = cart.map((item) => ({
-        product: item._id, // ✅ Ensure MongoDB ID is passed
-        quantity: 1, // ✅ Default quantity (modify if needed)
+        product: item._id, // MongoDB product ID
+        quantity: 1, // Default quantity (can be changed if cart supports quantity)
         price: item.price,
       }));
 
       try {
+        // Send order to backend
         const response = await fetch(backendURL, {
           method: "POST",
           headers: {
@@ -32,7 +35,7 @@ const SuccessPage = () => {
         });
 
         if (response.ok) {
-          localStorage.removeItem("cart"); // ✅ Clear cart only after successful order storage
+          localStorage.removeItem("cart"); // Clear cart after successful order
         } else {
           console.error("❌ Failed to store order:", await response.json());
         }
@@ -45,6 +48,7 @@ const SuccessPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
+      {/* Success message */}
       <h1 className="text-3xl font-bold text-center">
         🎉 Order Placed Successfully!
       </h1>
@@ -53,6 +57,7 @@ const SuccessPage = () => {
         soon.
       </p>
 
+      {/* Button to return to dashboard */}
       <button
         onClick={() => navigate("/dashboard")}
         className="mt-6 px-4 py-2 primary-btn rounded-md transition"

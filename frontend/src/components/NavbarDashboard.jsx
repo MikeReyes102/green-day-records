@@ -2,10 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 
+// NavbarDashboard component displays the dashboard navigation bar for authenticated users.
+// Includes logo, search bar, cart/account links, and logout functionality.
+
 const NavbarDashboard = ({ setSearchResults }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate(); // ✅ For redirecting after logout
+  const navigate = useNavigate(); // For redirecting after logout
 
+  // Handles search input changes and updates search results
   const handleSearch = async (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -19,10 +23,11 @@ const NavbarDashboard = ({ setSearchResults }) => {
     }
   };
 
+  // Handles user logout by clearing local storage and redirecting to home
   const handleLogout = () => {
-    localStorage.removeItem("token"); // ✅ Remove JWT
-    localStorage.removeItem("role"); // ✅ Remove stored user role
-    navigate("/"); // ✅ Redirect to home page
+    localStorage.removeItem("token"); // Remove JWT
+    localStorage.removeItem("role"); // Remove stored user role
+    navigate("/"); // Redirect to home page
   };
 
   return (

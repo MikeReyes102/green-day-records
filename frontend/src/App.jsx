@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import useTheme from "./hooks/useTheme";
 
+// Importing all page components
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -8,9 +9,9 @@ import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserManagement from "./pages/UserManagement";
 import ManageOrders from "./pages/ManageOrders";
-import ManageProducts from "./pages/ManageProducts"; // ✅ New import
-import NewProduct from "./pages/NewProduct";         // ✅ New import
-import EditProduct from "./pages/EditProduct";       // ✅ New import
+import ManageProducts from "./pages/ManageProducts"; // Admin: Manage products
+import NewProduct from "./pages/NewProduct";         // Admin: Add new product
+import EditProduct from "./pages/EditProduct";       // Admin: Edit product
 
 import ProductPage from "./pages/ProductPage";
 import AccountPage from "./pages/AccountPage";
@@ -18,11 +19,14 @@ import CartPage from "./pages/CartPage";
 import SuccessPage from "./pages/SuccessPage";
 
 const App = () => {
+  // Custom hook for theme (dark/light mode)
   const { theme, toggleTheme } = useTheme();
+  // Get user role from localStorage to determine access
   const userRole = localStorage.getItem("role");
 
   return (
     <Router>
+      {/* Main app container with dynamic theme classes */}
       <div className={`relative min-h-screen ${theme === "dark" ? "bg-background text-text" : "bg-light text-dark"}`}>
         <Routes>
           {/* Public Routes */}
@@ -30,7 +34,7 @@ const App = () => {
           <Route path="/login" element={<Login theme={theme} />} />
           <Route path="/register" element={<Register theme={theme} />} />
 
-          {/* User Dashboard (with redirect for admins) */}
+          {/* User Dashboard (redirects admin to admin dashboard) */}
           <Route
             path="/dashboard"
             element={
@@ -42,7 +46,7 @@ const App = () => {
             }
           />
 
-          {/* Admin Routes */}
+          {/* Admin Routes (protected, only accessible by admin) */}
           <Route
             path="/admin"
             element={
@@ -104,7 +108,7 @@ const App = () => {
             }
           />
 
-          {/* Public Product Pages */}
+          {/* Public Product and Account Pages */}
           <Route path="/product" element={<ProductPage theme={theme} />} />
           <Route path="/account" element={<AccountPage toggleTheme={toggleTheme} theme={theme} />} />
           <Route path="/cart" element={<CartPage theme={theme} />} />

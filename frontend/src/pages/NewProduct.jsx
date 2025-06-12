@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 
-
+// Component for creating a new product
 const NewProduct = () => {
-  const { theme } = useTheme();
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const { theme } = useTheme(); // Theme hook for styling
+  const navigate = useNavigate(); // Navigation hook
+  const token = localStorage.getItem("token"); // Get auth token
 
+  // State for form data, including track listing
   const [formData, setFormData] = useState({
     title: "",
     artist: "",
@@ -23,18 +24,22 @@ const NewProduct = () => {
     ]
   });
 
+  // Handle input changes for both product fields and track listing
   const handleChange = (e, index = null, field = null) => {
     const { name, value } = e.target;
 
     if (index !== null) {
+      // Update a specific track in the track listing
       const updatedTracks = [...formData.trackListing];
       updatedTracks[index][field] = value;
       setFormData({ ...formData, trackListing: updatedTracks });
     } else {
+      // Update a regular product field
       setFormData({ ...formData, [name]: value });
     }
   };
 
+  // Add a new track to the track listing
   const addTrack = () => {
     setFormData((prev) => ({
       ...prev,
@@ -45,6 +50,7 @@ const NewProduct = () => {
     }));
   };
 
+  // Handle form submission to create a new product
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -60,7 +66,7 @@ const NewProduct = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("✅ Product created:", data);
-        navigate("/admin/products");
+        navigate("/admin/products"); // Redirect to products page
       } else {
         const error = await response.json();
         console.error("❌ Error:", error.message);
@@ -72,6 +78,7 @@ const NewProduct = () => {
 
   return (
     <div className={`min-h-screen ${theme} p-6 font-[var(--font-body)]`}>
+      {/* Back to Products button */}
       <button
         onClick={() => navigate("/admin/products")}
         className="mb-6 px-6 py-3 bg-[var(--secondary-bg-color)] text-[var(--text-color)] rounded hover:bg-gray-700 transition font-bold"
@@ -79,24 +86,57 @@ const NewProduct = () => {
         ← Back to Products
       </button>
 
+      {/* Page header */}
       <h1 className="text-4xl font-[var(--font-heading)] text-center mb-6">
         New Product
       </h1>
 
+      {/* Product creation form */}
       <form
         onSubmit={handleSubmit}
         className="max-w-2xl mx-auto bg-[var(--bg-color)] p-6 rounded-lg shadow-lg space-y-4"
       >
+        {/* Render input fields for product details */}
         {[
-          { name: "title", label: "Title" },
-          { name: "artist", label: "Artist" },
-          { name: "genre", label: "Genre" },
-          { name: "releaseYear", label: "Release Year", type: "number" },
-          { name: "label", label: "Label" },
-          { name: "condition", label: "Condition" },
-          { name: "price", label: "Price", type: "number" },
-          { name: "stock", label: "Stock", type: "number" },
-          { name: "imageUrl", label: "Image URL" }
+          {
+            name: "title",
+            label: "Title"
+          },
+          {
+            name: "artist",
+            label: "Artist"
+          },
+          {
+            name: "genre",
+            label: "Genre"
+          },
+          {
+            name: "releaseYear",
+            label: "Release Year",
+            type: "number"
+          },
+          {
+            name: "label",
+            label: "Label"
+          },
+          {
+            name: "condition",
+            label: "Condition"
+          },
+          {
+            name: "price",
+            label: "Price",
+            type: "number"
+          },
+          {
+            name: "stock",
+            label: "Stock",
+            type: "number"
+          },
+          {
+            name: "imageUrl",
+            label: "Image URL"
+          }
         ].map(({ name, label, type = "text" }) => (
           <input
             key={name}
@@ -110,6 +150,7 @@ const NewProduct = () => {
           />
         ))}
 
+        {/* Track listing section */}
         <div>
           <label className="block font-bold mb-2">Track Listing:</label>
           {formData.trackListing.map((track, index) => (
@@ -139,6 +180,7 @@ const NewProduct = () => {
             </div>
           ))}
 
+          {/* Button to add a new track */}
           <button
             type="button"
             onClick={addTrack}
@@ -148,6 +190,7 @@ const NewProduct = () => {
           </button>
         </div>
 
+        {/* Submit button */}
         <button
           type="submit"
           className="w-full px-6 py-3 bg-[var(--accent-color)] text-white rounded hover:bg-green-700 transition font-bold"

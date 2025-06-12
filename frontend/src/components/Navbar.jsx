@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+// Navbar component displays the site logo and navigation links for Login and Register.
+// Uses React Router's Link for client-side navigation.
+
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-6 py-4 navbar">

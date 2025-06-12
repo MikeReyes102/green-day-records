@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// AccountPage component displays user info, order history, and theme toggle
 const AccountPage = ({ toggleTheme, theme }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [orders, setOrders] = useState([]);
-  const token = localStorage.getItem("token"); // ✅ Get stored auth token
+  const [user, setUser] = useState(null); // Stores user details
+  const [orders, setOrders] = useState([]); // Stores user's order history
+  const token = localStorage.getItem("token"); // Get stored auth token
 
+  // Fetch user data and order history on mount
   useEffect(() => {
     async function fetchUserData() {
       if (!token) return;
@@ -19,8 +21,8 @@ const AccountPage = ({ toggleTheme, theme }) => {
 
         if (response.ok) {
           const data = await response.json();
-          setUser(data.user); // ✅ Store user details
-          setOrders(data.orders); // ✅ Store order history with product info
+          setUser(data.user); // Store user details
+          setOrders(data.orders); // Store order history with product info
         } else {
           console.error(
             "❌ Failed to fetch account data:",
@@ -58,12 +60,9 @@ const AccountPage = ({ toggleTheme, theme }) => {
             <ul className="list-disc list-inside text-text">
               {orders.map((order) => (
                 <li key={order._id} className="mt-2">
-                  {" "}
-                  {/* ✅ Add unique key here */}
+                  {/* List each item in the order */}
                   {order.orderItems.map((item) => (
                     <p key={item.product._id}>
-                      {" "}
-                      {/* ✅ Assign a unique key to each item */}
                       {item.quantity}x {item.product.title} by{" "}
                       {item.product.artist} - ${item.product.price}
                     </p>
@@ -82,7 +81,7 @@ const AccountPage = ({ toggleTheme, theme }) => {
           )}
         </div>
 
-        {/* Theme Toggle */}
+        {/* Theme Toggle Button */}
         <div className="flex justify-center mt-6">
           <button
             onClick={toggleTheme}
@@ -92,7 +91,7 @@ const AccountPage = ({ toggleTheme, theme }) => {
           </button>
         </div>
 
-        {/* Buttons */}
+        {/* Edit Account and Back Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center">
           <button className="w-full sm:w-auto px-4 py-2 primary-btn rounded-md transition">
             Edit Account

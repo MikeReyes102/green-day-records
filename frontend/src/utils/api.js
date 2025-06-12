@@ -4,6 +4,8 @@ const API_BASE_URL = "http://localhost:5000";
 
 const api = {
   // User Methods
+
+  // Log in a user with email and password
   loginUser: async (email, password) => {
     try {
       const response = await axios.post(`${API_BASE_URL}/users/login`, {
@@ -17,6 +19,7 @@ const api = {
     }
   },
 
+  // Register a new user
   registerUser: async (userdata) => {
     try {
       const response = await axios.post(
@@ -30,6 +33,7 @@ const api = {
     }
   },
 
+  // Get the profile of the currently logged-in user
   getUserProfile: async (token) => {
     try {
       const response = await axios.get(`${API_BASE_URL}/users/profile`, {
@@ -43,6 +47,8 @@ const api = {
   },
 
   // Product Methods
+
+  // Get all products
   getProducts: async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/products`);
@@ -53,6 +59,7 @@ const api = {
     }
   },
 
+  // Search for products by query string
   searchProducts: async (query) => {
     const encodedQuery = encodeURIComponent(query);
     console.log(
@@ -71,6 +78,7 @@ const api = {
     }
   },
 
+  // Get a product by its ID
   getProductById: async (id) => {
     try {
       console.log(`🔍 Sending request to: ${API_BASE_URL}/products/${id}`);
@@ -82,6 +90,8 @@ const api = {
       return null;
     }
   },
+
+  // Delete a product by its ID
   deleteProduct: async (productId, token) => {
     try {
       const response = await axios.delete(
@@ -98,6 +108,8 @@ const api = {
   },
 
   // Account Management Methods
+
+  // Update a user's role (admin/user)
   updateUserRole: async (userId, role, token) => {
     try {
       const response = await axios.patch(
@@ -112,6 +124,7 @@ const api = {
     }
   },
 
+  // Delete a user by their ID
   deleteUser: async (userId, token) => {
     try {
       const response = await axios.delete(`${API_BASE_URL}/users/${userId}`, {
@@ -125,6 +138,8 @@ const api = {
   },
 
   // Order Methods
+
+  // Update the status of an order
   updateOrderStatus: async (orderId, newStatus, token) => {
     try {
       const response = await axios.patch(

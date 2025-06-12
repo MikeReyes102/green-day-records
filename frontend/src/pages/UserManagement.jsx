@@ -3,17 +3,20 @@ import { useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 import api from "../utils/api";
 
+// UserManagement component for admin to manage users
 const UserManagement = () => {
-  const [users, setUsers] = useState([]);
-  const [currentUserId, setCurrentUserId] = useState(null);
+  const [users, setUsers] = useState([]); // List of all users
+  const [currentUserId, setCurrentUserId] = useState(null); // Current logged-in user's ID
   const navigate = useNavigate();
   const { theme } = useTheme();
   const token = localStorage.getItem("token");
 
+  // Fetch users and current user profile on mount
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) return;
 
+    // Fetch all users from backend
     const fetchUsers = async () => {
       try {
         const response = await fetch("http://localhost:5000/users", {
@@ -31,6 +34,7 @@ const UserManagement = () => {
       }
     };
 
+    // Fetch current user's profile to prevent self-deletion/role change
     const fetchCurrentUser = async () => {
       try {
         const profile = await api.getUserProfile(token);
@@ -44,8 +48,9 @@ const UserManagement = () => {
 
     fetchUsers();
     fetchCurrentUser();
-  }, []); // <-- leave the array empty now
+  }, []); // Run once on mount
 
+  // Delete a user by ID
   const deleteUser = async (userId) => {
     const result = await api.deleteUser(userId, token);
     if (!result.error) {
@@ -55,6 +60,7 @@ const UserManagement = () => {
     }
   };
 
+  // Update a user's role (admin/user)
   const updateUserRole = async (userId, role) => {
     const result = await api.updateUserRole(userId, role, token);
     if (!result.error) {
@@ -68,6 +74,7 @@ const UserManagement = () => {
 
   return (
     <div className={`min-h-screen ${theme} p-6 font-[var(--font-body)]`}>
+      {/* Back to Dashboard button */}
       <button
         onClick={() => navigate("/admin")}
         className="mb-6 px-6 py-3 bg-[var(--secondary-bg-color)] text-[var(--text-color)] rounded hover:bg-gray-700 transition font-bold"
@@ -75,6 +82,7 @@ const UserManagement = () => {
         ← Back to Dashboard
       </button>
 
+      {/* Page header */}
       <h1 className="text-4xl font-[var(--font-heading)] text-center">
         Manage Users
       </h1>
@@ -82,6 +90,7 @@ const UserManagement = () => {
         Edit roles or remove users
       </p>
 
+      {/* Users table */}
       <div className="mt-4">
         {users.length > 0 ? (
           <div className="overflow-x-auto">
@@ -111,6 +120,7 @@ const UserManagement = () => {
                       <td className="border p-4">{user.email}</td>
                       <td className="border p-4">{user.role}</td>
                       <td className="border p-4 flex gap-2">
+                        {/* Delete button, disabled for self */}
                         <button
                           onClick={() => deleteUser(user._id)}
                           disabled={isCurrentUser}
@@ -128,6 +138,7 @@ const UserManagement = () => {
                           Delete
                         </button>
 
+                        {/* Role toggle button, disabled for self */}
                         <button
                           onClick={() =>
                             updateUserRole(
