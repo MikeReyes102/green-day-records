@@ -9,7 +9,7 @@ router.get("/:id", productController.getProductById);
 
 // Admin routes
 router.post('/', protect, adminOnly, productController.addProduct); 
-router.put('/:id', protect, adminOnly, productController.updateProduct); 
+router.patch('/:id', protect, adminOnly, productController.updateProduct); 
 router.delete('/:id', protect, adminOnly, productController.deleteProduct); 
 
 module.exports = router;

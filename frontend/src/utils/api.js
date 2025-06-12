@@ -43,7 +43,6 @@ const api = {
   },
 
   // Product Methods
-
   getProducts: async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/products`);
@@ -53,6 +52,7 @@ const api = {
       return [];
     }
   },
+
   searchProducts: async (query) => {
     const encodedQuery = encodeURIComponent(query);
     console.log(
@@ -63,24 +63,81 @@ const api = {
       const response = await axios.get(
         `${API_BASE_URL}/products/search?q=${encodedQuery}`
       );
-      console.log("Search API Response:", response.data); // ✅ Debugging API Response
+      console.log("Search API Response:", response.data);
       return response.data;
     } catch (error) {
       console.error("Error searching products:", error);
       return [];
     }
   },
+
   getProductById: async (id) => {
     try {
-      console.log(`🔍 Sending request to: ${API_BASE_URL}/products/${id}`); // ✅ Debugging API Call
+      console.log(`🔍 Sending request to: ${API_BASE_URL}/products/${id}`);
       const response = await axios.get(`${API_BASE_URL}/products/${id}`);
-      console.log("✅ Product Response:", response.data); // ✅ Debug API Response
+      console.log("✅ Product Response:", response.data);
       return response.data;
     } catch (error) {
       console.error("❌ Error fetching product by ID:", error);
       return null;
     }
-  }
+  },
+  deleteProduct: async (productId, token) => {
+    try {
+      const response = await axios.delete(
+        `${API_BASE_URL}/products/${productId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("❌ Error deleting product:", error);
+      return { error: "Failed to delete product." };
+    }
+  },
+
+  // Account Management Methods
+  updateUserRole: async (userId, role, token) => {
+    try {
+      const response = await axios.patch(
+        `${API_BASE_URL}/users/${userId}`,
+        { role },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error updating user role:", error);
+      return { error: "Failed to update user role." };
+    }
+  },
+
+  deleteUser: async (userId, token) => {
+    try {
+      const response = await axios.delete(`${API_BASE_URL}/users/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      return { error: "Failed to delete user." };
+    }
+  },
+
+  // Order Methods
+  updateOrderStatus: async (orderId, newStatus, token) => {
+    try {
+      const response = await axios.patch(
+        `${API_BASE_URL}/orders/${orderId}/status`, // ✅ Updated endpoint
+        { status: newStatus },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("❌ Error updating order status:", error);
+      return { error: "Failed to update order status." };
+    }
+  },
 };
 
 export default api;

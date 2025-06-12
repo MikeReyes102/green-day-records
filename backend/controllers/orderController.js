@@ -48,6 +48,7 @@ const getAllOrders = async (req, res) => {
             return res.status(403).json({ message: "Access denied: Admins only" });
         }
 
+        // ✅ Populate 'user' field to include customer name & email
         const orders = await Order.find().populate("user", "name email");
         res.json(orders);
     } catch (err) {
@@ -55,4 +56,34 @@ const getAllOrders = async (req, res) => {
     }
 };
 
-module.exports = { createOrder, getOrderById, getAllOrders };
+const updateOrderStatus = async (req, res) => {
+    try {
+        const { status } = req.body;
+
+        if (!status) {
+            return res.status(400).json({ message: "Order status is required" });
+        }
+
+        const order = await Order.findById(req.params.id);
+        if (!order) {
+            return res.status(404).json({ message: "Order not found" });
+        }
+
+        if (!order.orderStatus) {
+            return res.status(500).json({ message: "Order does not have an orderStatus field" });
+        }
+
+        if (req.user.role !== "admin") {
+            return res.status(403).json({ message: "Access denied: Admins only" });
+        }
+
+        order.orderStatus = status;
+        await order.save();
+
+        res.json({ message: "Order status updated", order });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+module.exports = { createOrder, getOrderById, getAllOrders, updateOrderStatus };
