@@ -1,41 +1,29 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../utils/api"; // ✅ Import API functions
 
-// AccountPage component displays user info, order history, and theme toggle
 const AccountPage = ({ toggleTheme, theme }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null); // Stores user details
-  const [orders, setOrders] = useState([]); // Stores user's order history
-  const token = localStorage.getItem("token"); // Get stored auth token
+  const [user, setUser] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const token = localStorage.getItem("token");
 
-  // Fetch user data and order history on mount
+  // ✅ Fetch user details & orders using API method
   useEffect(() => {
-    async function fetchUserData() {
+    async function fetchAccountData() {
       if (!token) return;
 
       try {
-        const response = await fetch("http://localhost:5000/users/profile", {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          setUser(data.user); // Store user details
-          setOrders(data.orders); // Store order history with product info
-        } else {
-          console.error(
-            "❌ Failed to fetch account data:",
-            await response.json()
-          );
-        }
+        const data = await api.getUserProfile();
+        setUser(data.user);
+        setOrders(data.orders);
       } catch (error) {
-        console.error("❌ Network Error:", error);
+        console.error("❌ Failed to fetch account data:", error);
       }
     }
 
-    fetchUserData();
-  }, []);
+    fetchAccountData();
+  }, [token]);
 
   return (
     <div className="min-h-screen bg-background text-text p-6 flex flex-col items-center justify-center">
@@ -60,19 +48,13 @@ const AccountPage = ({ toggleTheme, theme }) => {
             <ul className="list-disc list-inside text-text">
               {orders.map((order) => (
                 <li key={order._id} className="mt-2">
-                  {/* List each item in the order */}
                   {order.orderItems.map((item) => (
                     <p key={item.product._id}>
-                      {item.quantity}x {item.product.title} by{" "}
-                      {item.product.artist} - ${item.product.price}
+                      {item.quantity}x {item.product.title} by {item.product.artist} - ${item.product.price}
                     </p>
                   ))}
-                  <p className="text-sm">
-                    Status: {order.orderStatus} | Total: ${order.totalPrice}
-                  </p>
-                  <p className="text-xs text-gray-400">
-                    Ordered on {new Date(order.createdAt).toLocaleDateString()}
-                  </p>
+                  <p className="text-sm">Status: {order.orderStatus} | Total: ${order.totalPrice}</p>
+                  <p className="text-xs text-gray-400">Ordered on {new Date(order.createdAt).toLocaleDateString()}</p>
                 </li>
               ))}
             </ul>
@@ -83,19 +65,14 @@ const AccountPage = ({ toggleTheme, theme }) => {
 
         {/* Theme Toggle Button */}
         <div className="flex justify-center mt-6">
-          <button
-            onClick={toggleTheme}
-            className="px-4 py-2 primary-btn rounded-md transition"
-          >
+          <button onClick={toggleTheme} className="px-4 py-2 primary-btn rounded-md transition">
             Switch to {theme === "dark" ? "Light" : "Dark"} Mode
           </button>
         </div>
 
         {/* Edit Account and Back Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center">
-          <button className="w-full sm:w-auto px-4 py-2 primary-btn rounded-md transition">
-            Edit Account
-          </button>
+          <button className="w-full sm:w-auto px-4 py-2 primary-btn rounded-md transition">Edit Account</button>
           <button
             onClick={() => navigate("/dashboard")}
             className="w-full sm:w-auto px-4 py-2 secondary-btn rounded-md transition"

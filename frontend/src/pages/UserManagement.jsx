@@ -1,80 +1,71 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth"; // ✅ Ensure admin-only access
 import useTheme from "../hooks/useTheme";
 import api from "../utils/api";
 
-// UserManagement component for admin to manage users
 const UserManagement = () => {
-  const [users, setUsers] = useState([]); // List of all users
-  const [currentUserId, setCurrentUserId] = useState(null); // Current logged-in user's ID
-  const navigate = useNavigate();
+  useAuth(); // ✅ Protects this admin page from unauthorized users
   const { theme } = useTheme();
-  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+  const [currentUserId, setCurrentUserId] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null); // ✅ UI-based error handling
 
-  // Fetch users and current user profile on mount
+  // ✅ Fetch users & current user profile on mount
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) return;
-
-    // Fetch all users from backend
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users", {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setUsers(data);
-        } else {
-          console.error("❌ Failed to fetch users:", await response.json());
-        }
+        const data = await api.getUsers();
+        setUsers(data);
       } catch (error) {
-        console.error("❌ Network Error:", error);
+        console.error("❌ Error fetching users:", error);
+        setErrorMessage("Failed to load users. Please try again.");
       }
     };
 
-    // Fetch current user's profile to prevent self-deletion/role change
     const fetchCurrentUser = async () => {
       try {
-        const profile = await api.getUserProfile(token);
-        if (profile && profile._id) {
+        const profile = await api.getUserProfile();
+        if (profile?._id) {
           setCurrentUserId(profile._id);
         }
       } catch (error) {
-        console.error("❌ Failed to fetch current user profile:", error);
+        console.error("❌ Error fetching current user profile:", error);
+        setErrorMessage("Failed to load user data.");
       }
     };
 
     fetchUsers();
     fetchCurrentUser();
-  }, []); // Run once on mount
+  }, []);
 
-  // Delete a user by ID
+  // ✅ Handle user deletion
   const deleteUser = async (userId) => {
-    const result = await api.deleteUser(userId, token);
-    if (!result.error) {
+    try {
+      await api.deleteUser(userId);
       setUsers((prev) => prev.filter((user) => user._id !== userId));
-    } else {
-      console.error(result.error);
+    } catch (error) {
+      console.error("❌ Error deleting user:", error);
+      setErrorMessage("Failed to delete user. Please try again.");
     }
   };
 
-  // Update a user's role (admin/user)
+  // ✅ Handle user role update
   const updateUserRole = async (userId, role) => {
-    const result = await api.updateUserRole(userId, role, token);
-    if (!result.error) {
+    try {
+      await api.updateUserRole(userId, role);
       setUsers((prev) =>
         prev.map((user) => (user._id === userId ? { ...user, role } : user))
       );
-    } else {
-      console.error(result.error);
+    } catch (error) {
+      console.error("❌ Error updating user role:", error);
+      setErrorMessage("Failed to update user role. Please try again.");
     }
   };
 
   return (
     <div className={`min-h-screen ${theme} p-6 font-[var(--font-body)]`}>
-      {/* Back to Dashboard button */}
       <button
         onClick={() => navigate("/admin")}
         className="mb-6 px-6 py-3 bg-[var(--secondary-bg-color)] text-[var(--text-color)] rounded hover:bg-gray-700 transition font-bold"
@@ -82,15 +73,14 @@ const UserManagement = () => {
         ← Back to Dashboard
       </button>
 
-      {/* Page header */}
-      <h1 className="text-4xl font-[var(--font-heading)] text-center">
-        Manage Users
-      </h1>
+      <h1 className="text-4xl font-[var(--font-heading)] text-center">Manage Users</h1>
       <p className="text-lg text-center text-[var(--secondary-accent)] mb-6">
         Edit roles or remove users
       </p>
 
-      {/* Users table */}
+      {/* Error Message Display */}
+      {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+
       <div className="mt-4">
         {users.length > 0 ? (
           <div className="overflow-x-auto">
@@ -111,9 +101,7 @@ const UserManagement = () => {
                     <tr
                       key={user._id}
                       className={`text-[var(--text-color)] ${
-                        index % 2 === 0
-                          ? "bg-[var(--bg-color)]"
-                          : "bg-[var(--secondary-bg-color)]"
+                        index % 2 === 0 ? "bg-[var(--bg-color)]" : "bg-[var(--secondary-bg-color)]"
                       }`}
                     >
                       <td className="border p-4">{user.name}</td>
@@ -129,40 +117,23 @@ const UserManagement = () => {
                               ? "bg-gray-400 text-white cursor-not-allowed"
                               : "bg-[var(--secondary-accent)] text-white hover:bg-red-700"
                           }`}
-                          title={
-                            isCurrentUser
-                              ? "You can't delete yourself"
-                              : "Delete this user"
-                          }
+                          title={isCurrentUser ? "You can't delete yourself" : "Delete this user"}
                         >
                           Delete
                         </button>
 
                         {/* Role toggle button, disabled for self */}
                         <button
-                          onClick={() =>
-                            updateUserRole(
-                              user._id,
-                              user.role === "admin" ? "user" : "admin"
-                            )
-                          }
+                          onClick={() => updateUserRole(user._id, user.role === "admin" ? "user" : "admin")}
                           disabled={isCurrentUser}
                           className={`px-3 py-1 rounded transition font-bold ${
                             isCurrentUser
                               ? "bg-gray-400 text-white cursor-not-allowed"
                               : "bg-[var(--accent-color)] text-white hover:bg-blue-700"
                           }`}
-                          title={
-                            isCurrentUser
-                              ? "You can't change your own role"
-                              : user.role === "admin"
-                              ? "Revoke Admin"
-                              : "Make Admin"
-                          }
+                          title={isCurrentUser ? "You can't change your own role" : user.role === "admin" ? "Revoke Admin" : "Make Admin"}
                         >
-                          {user.role === "admin"
-                            ? "Revoke Admin"
-                            : "Make Admin"}
+                          {user.role === "admin" ? "Revoke Admin" : "Make Admin"}
                         </button>
                       </td>
                     </tr>

@@ -2,24 +2,30 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 import api from "../utils/api";
+import useAuth from "../hooks/useAuth";
 
-// EditProduct component allows admin to edit an existing product (record)
+
 const EditProduct = () => {
-  const { productId } = useParams(); // Get product ID from URL
-  const { theme } = useTheme(); // Get current theme
-  const navigate = useNavigate(); // For navigation
-  const token = localStorage.getItem("token"); // Get auth token
+  useAuth(); // ✅ Ensure only authenticated users can access
+  const { productId } = useParams();
+  const { theme } = useTheme();
+  const navigate = useNavigate();
 
-  const [formData, setFormData] = useState(null); // State for form data
+  const [formData, setFormData] = useState(null);
 
-  // Fetch product data on mount
+  // ✅ Fetch product data on mount
   useEffect(() => {
     const fetchProduct = async () => {
-      const product = await api.getProductById(productId);
-      if (product) {
-        setFormData(product);
-      } else {
-        console.error("❌ Product not found");
+      try {
+        const product = await api.getProductById(productId);
+        if (product) {
+          setFormData(product);
+        } else {
+          console.error("❌ Product not found");
+          navigate("/admin/products");
+        }
+      } catch (err) {
+        console.error("❌ Error fetching product:", err);
         navigate("/admin/products");
       }
     };
@@ -27,64 +33,41 @@ const EditProduct = () => {
     fetchProduct();
   }, [productId, navigate]);
 
-  // Handle input changes for both main fields and track listing
+  // ✅ Handle input changes for product fields & track listing
   const handleChange = (e, index = null, field = null) => {
     const { name, value } = e.target;
 
     if (index !== null) {
-      // Update a specific track in the track listing
       const updatedTracks = [...formData.trackListing];
       updatedTracks[index][field] = value;
       setFormData({ ...formData, trackListing: updatedTracks });
     } else {
-      // Update main product fields
       setFormData({ ...formData, [name]: value });
     }
   };
 
-  // Add a new empty track to the track listing
+  // ✅ Add a new empty track to the track listing
   const addTrack = () => {
     setFormData((prev) => ({
       ...prev,
-      trackListing: [
-        ...prev.trackListing,
-        { trackNumber: prev.trackListing.length + 1, title: "", duration: "" },
-      ],
+      trackListing: [...prev.trackListing, { trackNumber: prev.trackListing.length + 1, title: "", duration: "" }],
     }));
   };
 
-  // Handle form submission to update the product
+  // ✅ Handle form submission using API method
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        `http://localhost:5000/products/${productId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log("✅ Product updated:", data);
-        navigate("/admin/products");
-      } else {
-        const error = await response.json();
-        console.error("❌ Update failed:", error.message);
-      }
+      await api.updateProduct(productId, formData);
+      console.log("✅ Product updated successfully");
+      navigate("/admin/products");
     } catch (error) {
-      console.error("❌ Network error:", error);
+      console.error("❌ Failed to update product:", error);
     }
   };
 
-  // Show loading state if product data is not loaded yet
-  if (!formData)
-    return <p className="text-center text-lg">Loading product...</p>;
+  // ✅ Show loading state if product data isn't loaded yet
+  if (!formData) return <p className="text-center text-lg">Loading product...</p>;
 
   return (
     <div className={`min-h-screen ${theme} p-6 font-[var(--font-body)]`}>
@@ -96,15 +79,10 @@ const EditProduct = () => {
         ← Back to Products
       </button>
 
-      <h1 className="text-4xl font-[var(--font-heading)] text-center mb-6">
-        Edit Product
-      </h1>
+      <h1 className="text-4xl font-[var(--font-heading)] text-center mb-6">Edit Product</h1>
 
       {/* Product edit form */}
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto bg-[var(--bg-color)] p-6 rounded-lg shadow-lg space-y-4"
-      >
+      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-[var(--bg-color)] p-6 rounded-lg shadow-lg space-y-4">
         {/* Main product fields */}
         {[
           { name: "title", label: "Title" },
@@ -118,10 +96,7 @@ const EditProduct = () => {
           { name: "imageUrl", label: "Image URL" },
         ].map(({ name, label, type = "text" }) => (
           <div key={name} className="space-y-2">
-            <label
-              htmlFor={name}
-              className="block font-bold text-[var(--text-color)]"
-            >
+            <label htmlFor={name} className="block font-bold text-[var(--text-color)]">
               {label}
             </label>
             <input
@@ -138,16 +113,11 @@ const EditProduct = () => {
 
         {/* Track listing section */}
         <div>
-          <label className="block font-bold mb-2 text-[var(--text-color)]">
-            Track Listing:
-          </label>
+          <label className="block font-bold mb-2 text-[var(--text-color)]">Track Listing:</label>
           {formData.trackListing.map((track, index) => (
             <div key={index} className="grid grid-cols-3 gap-4 mb-2">
               <div>
-                <label
-                  htmlFor={`trackNumber-${index}`}
-                  className="block font-bold text-[var(--text-color)]"
-                >
+                <label htmlFor={`trackNumber-${index}`} className="block font-bold text-[var(--text-color)]">
                   Track #
                 </label>
                 <input
@@ -160,10 +130,7 @@ const EditProduct = () => {
                 />
               </div>
               <div>
-                <label
-                  htmlFor={`title-${index}`}
-                  className="block font-bold text-[var(--text-color)]"
-                >
+                <label htmlFor={`title-${index}`} className="block font-bold text-[var(--text-color)]">
                   Title
                 </label>
                 <input
@@ -175,10 +142,7 @@ const EditProduct = () => {
                 />
               </div>
               <div>
-                <label
-                  htmlFor={`duration-${index}`}
-                  className="block font-bold text-[var(--text-color)]"
-                >
+                <label htmlFor={`duration-${index}`} className="block font-bold text-[var(--text-color)]">
                   Duration
                 </label>
                 <input
@@ -193,20 +157,13 @@ const EditProduct = () => {
           ))}
 
           {/* Button to add a new track */}
-          <button
-            type="button"
-            onClick={addTrack}
-            className="mt-2 text-sm font-bold text-[var(--accent-color)] hover:underline"
-          >
+          <button type="button" onClick={addTrack} className="mt-2 text-sm font-bold text-[var(--accent-color)] hover:underline">
             + Add Track
           </button>
         </div>
 
         {/* Submit button */}
-        <button
-          type="submit"
-          className="w-full px-6 py-3 bg-[var(--accent-color)] text-white rounded hover:bg-green-700 transition font-bold"
-        >
+        <button type="submit" className="w-full px-6 py-3 bg-[var(--accent-color)] text-white rounded hover:bg-green-700 transition font-bold">
           Save Changes
         </button>
       </form>

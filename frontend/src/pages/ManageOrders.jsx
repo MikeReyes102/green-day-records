@@ -1,55 +1,43 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth"; // ✅ Ensure admin-only access
 import useTheme from "../hooks/useTheme";
-import api from "../utils/api"; // ✅ Import API helper
+import api from "../utils/api"; // ✅ Centralized API methods
 
 const ManageOrders = () => {
-  const [orders, setOrders] = useState([]); // State to hold orders
-  const navigate = useNavigate(); // Navigation hook
-  const { theme } = useTheme(); // Theme hook
-  const token = localStorage.getItem("token"); // Get token from localStorage
+  useAuth(); // ✅ Protects this admin page from unauthorized users
+  const { theme } = useTheme();
+  const navigate = useNavigate();
+  const [orders, setOrders] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null); // ✅ UI error handling
 
+  // ✅ Fetch orders on mount
   useEffect(() => {
-    if (!token) return; // If no token, do not fetch
-
-    // Fetch orders from backend
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/orders", {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          setOrders(data); // Set orders in state
-        } else {
-          console.error("❌ Failed to fetch orders:", await response.json());
-        }
+        const data = await api.getOrders();
+        setOrders(data);
       } catch (error) {
-        console.error("❌ Network Error:", error);
+        console.error("❌ Error fetching orders:", error);
+        setErrorMessage("Failed to load orders. Please try again.");
       }
     };
 
     fetchOrders();
-  }, [token]);
+  }, []);
 
-  // Update order status handler
+  // ✅ Update order status handler
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      const result = await api.updateOrderStatus(orderId, newStatus, token);
-      if (!result.error) {
-        // Update order status in state
-        setOrders((prev) =>
-          prev.map((order) =>
-            order._id === orderId ? { ...order, orderStatus: newStatus } : order
-          )
-        );
-      } else {
-        console.error("❌ Error updating order:", result.error);
-      }
+      await api.updateOrderStatus(orderId, newStatus);
+      setOrders((prev) =>
+        prev.map((order) =>
+          order._id === orderId ? { ...order, orderStatus: newStatus } : order
+        )
+      );
     } catch (error) {
-      console.error("❌ Network error:", error);
+      console.error("❌ Error updating order:", error);
+      setErrorMessage("Failed to update order status. Please try again.");
     }
   };
 
@@ -64,7 +52,12 @@ const ManageOrders = () => {
       </button>
 
       <h1 className="text-4xl font-[var(--font-heading)] text-center">Manage Orders</h1>
-      <p className="text-lg text-center text-[var(--secondary-accent)] mb-6">View and update order statuses</p>
+      <p className="text-lg text-center text-[var(--secondary-accent)] mb-6">
+        View and update order statuses
+      </p>
+
+      {/* Error Message Display */}
+      {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
 
       <div className="mt-4">
         {orders.length > 0 ? (
@@ -115,7 +108,9 @@ const ManageOrders = () => {
           </div>
         ) : (
           // Message if no orders found
-          <p className="text-center mt-6 text-xl font-semibold text-[var(--secondary-accent)]">No orders found.</p>
+          <p className="text-center mt-6 text-xl font-semibold text-[var(--secondary-accent)]">
+            No orders found.
+          </p>
         )}
       </div>
     </div>

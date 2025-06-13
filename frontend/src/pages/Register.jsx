@@ -1,73 +1,76 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 import api from "../utils/api";
 
-// Register component for user sign up
 const Register = () => {
-  const { theme } = useTheme(); // Get current theme for styling
-  const navigate = useNavigate(); // Initialize navigation function
+  const { theme } = useTheme();
+  const navigate = useNavigate();
 
-  // Handle registration form submission
+  // ✅ Use state for controlled inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  // ✅ Handle form submission
   const handleRegister = async (event) => {
     event.preventDefault();
 
-    // Collect user input from form fields
-    const userData = {
-      name: event.target[0].value.trim(),
-      email: event.target[1].value.trim(),
-      password: event.target[2].value.trim(),
-    };
-
     try {
-      // Call API to register user
-      const result = await api.registerUser(userData);
+      // ✅ Register user via API
+      const result = await api.registerUser({ name, email, password });
 
       if (result.error) {
-        alert(result.error); // Show error if registration fails
+        setErrorMessage(result.error); // ✅ Display error message in UI
       } else {
-        localStorage.setItem("token", result.token); // Store token on success
-        navigate("/dashboard"); // Redirect to dashboard
+        localStorage.setItem("token", result.token);
+        navigate("/dashboard");
+
+        console.log("✅ Registration successful:", result);
       }
     } catch (error) {
-      console.error("Registration failed:", error); // Log network or server errors
+      console.error("❌ Registration failed:", error);
+      setErrorMessage("Registration failed. Please try again.");
     }
   };
 
   return (
-    <div
-      className={`min-h-screen flex flex-col items-center justify-center ${
-        theme === "dark" ? "bg-background text-text" : "bg-background text-text"
-      }`}
-    >
+    <div className={`min-h-screen flex flex-col items-center justify-center ${theme}`}>
       <div className="w-full max-w-md p-6 rounded-lg container">
         <h1 className="text-3xl font-bold text-center">Register</h1>
-        <form
-          className="flex flex-col gap-4 w-full mt-4"
-          onSubmit={handleRegister}
-        >
+
+        {/* Error Message Display */}
+        {errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
+
+        <form className="flex flex-col gap-4 w-full mt-4" onSubmit={handleRegister}>
           {/* Name input */}
           <input
             type="text"
             placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)} // ✅ Controlled input
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
           {/* Email input */}
           <input
             type="email"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} // ✅ Controlled input
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
           {/* Password input */}
           <input
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} // ✅ Controlled input
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
+
           {/* Register button */}
-          <button
-            type="submit"
-            className="px-4 py-2 w-full primary-btn rounded-md transition"
-          >
+          <button type="submit" className="px-4 py-2 w-full primary-btn rounded-md transition">
             Register
           </button>
         </form>

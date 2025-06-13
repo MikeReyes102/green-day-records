@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme"; // ✅ Import theme hook
+import useLogout from "../hooks/useLogout";
+
+
 
 // AdminDashboard component for admin overview and navigation
 const AdminDashboard = () => {
   const navigate = useNavigate();
+  const logout = useLogout();
+
   const { theme } = useTheme(); // Get current theme
 
   // Dashboard statistics (could be fetched from API in real app)
@@ -18,14 +23,7 @@ const AdminDashboard = () => {
     { title: "Total Products", count: 312, color: "bg-purple-600" }, // New metric
     { title: "Pending Orders", count: 17, color: "bg-red-500" }, // New metric
   ];
-
-  // Handle logout: clear auth info and redirect to login
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    navigate("/login");
-  };
-
+  
   return (
     <div className={`min-h-screen ${theme} flex font-[var(--font-body)]`}>
       {/* Sidebar Navigation */}
@@ -70,7 +68,7 @@ const AdminDashboard = () => {
             <li className="flex items-center gap-3 px-4 py-3 rounded hover:bg-red-600 transition">
               <span className="material-icons text-lg">logout</span>
               <button
-                onClick={handleLogout}
+                onClick={logout}
                 className="w-full text-left text-white font-bold"
               >
                 Logout

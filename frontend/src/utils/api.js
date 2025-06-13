@@ -1,156 +1,273 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000";
+// ✅ Set the backend API base URL dynamically
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+// ✅ Configure Axios defaults for automatic request handling
+axios.defaults.baseURL = API_BASE_URL;
+axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem(
+  "token"
+)}`;
+
+// ✅ Enable logging only in development mode
+const isDev = import.meta.env.VITE_ENV === "development";
 
 const api = {
-  // User Methods
-
-  // Log in a user with email and password
+  /**
+   * Authenticate a user, store session data, and return their role
+   * @param {string} email - User's email
+   * @param {string} password - User's password
+   * @returns {Promise<Object>} User data or error message
+   */
   loginUser: async (email, password) => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/users/login`, {
-        email,
-        password,
-      });
-      return response.data;
-    } catch (error) {
-      console.error("Login error:", error);
-      return { error: error.response?.data?.message || "Login failed." };
+      if (isDev) console.log(`🔑 Attempting login: ${email}`);
+
+      const response = await axios.post("/users/login", { email, password });
+
+      if (response.data?.token && response.data?.role) {
+        // ✅ Store authentication details in localStorage
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", response.data.role);
+
+        if (isDev) console.log("✅ Login successful:", response.data);
+        return response.data;
+      } else {
+        throw new Error("Invalid login response: Missing token or role.");
+      }
+    } catch (err) {
+      console.error("❌ Login failed:", err);
+      throw new Error(err.response?.data?.message || "Login failed.");
     }
   },
 
-  // Register a new user
+  /**
+   * Register a new user
+   * @param {Object} userdata - User registration details
+   * @returns {Promise<Object>} Newly created user data or error message
+   */
   registerUser: async (userdata) => {
     try {
-      const response = await axios.post(
-        `${API_BASE_URL}/users/register`,
-        userdata
-      );
+      if (isDev) console.log("📝 Registering user:", userdata);
+      const response = await axios.post("/users/register", userdata);
+      if (isDev) console.log("✅ Registration successful:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("Registration error:", error);
-      return { error: error.response?.data?.message || "Registration failed." };
+    } catch (err) {
+      console.error("❌ Registration error:", err);
+      throw new Error(err.response?.data?.message || "Registration failed.");
     }
   },
 
-  // Get the profile of the currently logged-in user
-  getUserProfile: async (token) => {
+  /**
+   * Get the profile of the currently logged-in user
+   * @returns {Promise<Object>} User profile data or error message
+   */
+  getUserProfile: async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/users/profile`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      if (isDev) console.log("📂 Fetching user profile...");
+      const response = await axios.get("/users/profile");
+      if (isDev) console.log("✅ Profile data received:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("Profile error:", error);
-      return { error: "Failed to load profile." };
+    } catch (err) {
+      console.error("❌ Profile error:", err);
+      throw new Error("Failed to load profile.");
     }
   },
 
-  // Product Methods
-
-  // Get all products
+  // ✅ Product Methods
   getProducts: async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/products`);
+      if (isDev) console.log("📦 Fetching all products...");
+      const response = await axios.get("/products");
+      if (isDev)
+        console.log("✅ Products fetched successfully:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("Error fetching products:", error);
-      return [];
+    } catch (err) {
+      console.error("❌ Error fetching products:", err);
+      throw new Error("Failed to fetch products.");
     }
   },
 
-  // Search for products by query string
-  searchProducts: async (query) => {
-    const encodedQuery = encodeURIComponent(query);
-    console.log(
-      `Sending search request: ${API_BASE_URL}/products/search?q=${encodedQuery}`
-    );
-
-    try {
-      const response = await axios.get(
-        `${API_BASE_URL}/products/search?q=${encodedQuery}`
-      );
-      console.log("Search API Response:", response.data);
-      return response.data;
-    } catch (error) {
-      console.error("Error searching products:", error);
-      return [];
-    }
-  },
-
-  // Get a product by its ID
   getProductById: async (id) => {
     try {
-      console.log(`🔍 Sending request to: ${API_BASE_URL}/products/${id}`);
-      const response = await axios.get(`${API_BASE_URL}/products/${id}`);
-      console.log("✅ Product Response:", response.data);
+      if (isDev) console.log(`🔍 Fetching product ID: ${id}`);
+      const response = await axios.get(`/products/${id}`);
+      if (isDev) console.log("✅ Product data received:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("❌ Error fetching product by ID:", error);
-      return null;
+    } catch (err) {
+      console.error("❌ Error fetching product:", err);
+      throw new Error("Failed to fetch product.");
     }
   },
 
-  // Delete a product by its ID
-  deleteProduct: async (productId, token) => {
+  searchProducts: async (query) => {
     try {
-      const response = await axios.delete(
-        `${API_BASE_URL}/products/${productId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
+      if (isDev) console.log(`🔎 Searching products with query: "${query}"`);
+      const response = await axios.get(
+        `/products/search?q=${encodeURIComponent(query)}`
       );
+      if (isDev) console.log("✅ Search results received:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("❌ Error deleting product:", error);
-      return { error: "Failed to delete product." };
+    } catch (err) {
+      console.error("❌ Error searching products:", err);
+      throw new Error("Search failed.");
     }
   },
 
-  // Account Management Methods
-
-  // Update a user's role (admin/user)
-  updateUserRole: async (userId, role, token) => {
+  updateProduct: async (productId, productData) => {
     try {
-      const response = await axios.patch(
-        `${API_BASE_URL}/users/${userId}`,
-        { role },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      if (isDev)
+        console.log(`✏️ Updating product ID: ${productId}`, productData);
+
+      const response = await axios.patch(`/products/${productId}`, productData);
+
+      if (isDev) console.log("✅ Product updated:", response.data);
+
       return response.data;
-    } catch (error) {
-      console.error("Error updating user role:", error);
-      return { error: "Failed to update user role." };
+    } catch (err) {
+      console.error("❌ Error updating product:", err);
+      throw new Error("Failed to update product.");
     }
   },
 
-  // Delete a user by their ID
-  deleteUser: async (userId, token) => {
+  deleteProduct: async (productId) => {
     try {
-      const response = await axios.delete(`${API_BASE_URL}/users/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      if (isDev) console.log(`🗑️ Deleting product ID: ${productId}`);
+      const response = await axios.delete(`/products/${productId}`);
+      if (isDev) console.log("✅ Product deleted successfully:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("Error deleting user:", error);
-      return { error: "Failed to delete user." };
+    } catch (err) {
+      console.error("❌ Error deleting product:", err);
+      throw new Error("Failed to delete product.");
     }
   },
 
   // Order Methods
-
-  // Update the status of an order
-  updateOrderStatus: async (orderId, newStatus, token) => {
+  createCheckoutSession: async (cart) => {
     try {
-      const response = await axios.patch(
-        `${API_BASE_URL}/orders/${orderId}/status`, // ✅ Updated endpoint
-        { status: newStatus },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      if (isDev) console.log("💳 Creating checkout session...");
+
+      const response = await axios.post("/api/create-checkout-session", {
+        cart,
+      });
+
+      if (isDev) console.log("✅ Checkout session created:", response.data);
+
       return response.data;
-    } catch (error) {
-      console.error("❌ Error updating order status:", error);
-      return { error: "Failed to update order status." };
+    } catch (err) {
+      console.error("❌ Checkout error:", err);
+      throw new Error("Failed to create checkout session.");
+    }
+  },
+
+  /**
+   * ✅ Save an order to the backend
+   * @param {Array} cart - List of items in the cart
+   * @param {number} totalPrice - Total price of the order
+   * @returns {Promise<Object>} Order confirmation or error message
+   */
+  saveOrder: async (cart, totalPrice) => {
+    try {
+      if (isDev) console.log("🛒 Saving order to backend...");
+
+      const formattedOrderItems = cart.map((item) => ({
+        product: item._id,
+        quantity: 1, // Default quantity (can be adjusted if needed)
+        price: item.price,
+      }));
+
+      const response = await axios.post("/orders", {
+        orderItems: formattedOrderItems,
+        totalPrice,
+      });
+
+      if (isDev) console.log("✅ Order saved successfully:", response.data);
+
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error saving order:", err);
+      throw new Error("Failed to save order.");
+    }
+  },
+
+  // ✅ Order Management
+
+  /**
+   * ✅ Fetch all orders
+   * @returns {Promise<Array>} List of orders or error message
+   */
+  getOrders: async () => {
+    try {
+      if (isDev) console.log("📦 Fetching all orders...");
+
+      const response = await axios.get("/orders");
+
+      if (isDev) console.log("✅ Orders fetched successfully:", response.data);
+
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error fetching orders:", err);
+      throw new Error("Failed to fetch orders.");
+    }
+  },
+
+  updateOrderStatus: async (orderId, newStatus) => {
+    try {
+      if (isDev)
+        console.log(`🚀 Updating order ID: ${orderId} to status: ${newStatus}`);
+      const response = await axios.patch(`/orders/${orderId}/status`, {
+        status: newStatus,
+      });
+      if (isDev) console.log("✅ Order status updated:", response.data);
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error updating order status:", err);
+      throw new Error("Failed to update order status.");
+    }
+  },
+
+  // ✅ User Account Management
+
+  /**
+   * ✅ Fetch all users
+   * @returns {Promise<Array>} List of users or error message
+   */
+  getUsers: async () => {
+    try {
+      if (isDev) console.log("📂 Fetching all users...");
+
+      const response = await axios.get("/users");
+
+      if (isDev) console.log("✅ Users fetched successfully:", response.data);
+
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error fetching users:", err);
+      throw new Error("Failed to fetch users.");
+    }
+  },
+
+  updateUserRole: async (userId, role) => {
+    try {
+      if (isDev) console.log(`🔁 Updating user ID: ${userId} to role: ${role}`);
+      const response = await axios.patch(`/users/${userId}`, { role });
+      if (isDev) console.log("✅ User role updated:", response.data);
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error updating user role:", err);
+      throw new Error("Failed to update user role.");
+    }
+  },
+
+  deleteUser: async (userId) => {
+    try {
+      if (isDev) console.log(`⚠️ Deleting user ID: ${userId}`);
+      const response = await axios.delete(`/users/${userId}`);
+      if (isDev) console.log("✅ User deleted successfully:", response.data);
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error deleting user:", err);
+      throw new Error("Failed to delete user.");
     }
   },
 };

@@ -1,39 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
-import { useEffect, useState } from "react";
+import useCart from "../hooks/useCart"; // ✅ Import cart management hook
+import api from "../utils/api"; // ✅ Import API methods
 
-// CartPage component displays the user's shopping cart and handles checkout
 const CartPage = () => {
-  const { theme } = useTheme(); // Get current theme (dark/light)
-  const navigate = useNavigate(); // For navigation
-  const [cart, setCart] = useState([]); // Cart state
+  const { theme } = useTheme();
+  const navigate = useNavigate();
+  const { cart, removeFromCart, totalPrice } = useCart(); // ✅ Use cart hook
 
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart")) || []);
-  }, []);
-
-  // Remove an item from the cart
-  function removeFromCart(productId) {
-    const updatedCart = cart.filter((item) => item._id !== productId);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCart(updatedCart);
-  }
-
-  const backendURL = "http://localhost:5000/api/create-checkout-session"; // Backend endpoint for Stripe checkout
-
-  // Handle checkout: send cart to backend and redirect to Stripe
-  async function handleCheckout() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  // ✅ Handle checkout via API call
+  const handleCheckout = async () => {
     try {
-      const response = await fetch(backendURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart }),
-      });
-
-      const data = await response.json();
+      const data = await api.createCheckoutSession(cart);
 
       if (data.url) {
         window.location.href = data.url; // Redirect to Stripe Checkout
@@ -43,13 +21,10 @@ const CartPage = () => {
     } catch (error) {
       console.error("❌ Network Error:", error);
     }
-  }
-
-  // Calculate total price of items in cart
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  };
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center ${theme === "dark" ? "bg-background text-text" : "bg-background text-text"}`}>
+    <div className={`min-h-screen flex flex-col items-center justify-center ${theme}`}>
       <div className="w-full max-w-lg p-6 rounded-lg container">
         <h1 className="text-3xl font-bold text-center">Shopping Cart</h1>
 
@@ -64,7 +39,9 @@ const CartPage = () => {
                   <p className="text-lg font-semibold">{item.title} - {item.artist}</p>
                   <p className="text-sm">Price: ${item.price.toFixed(2)}</p>
                 </div>
-                <button onClick={() => removeFromCart(item._id)} className="text-red-500">Remove</button>
+                <button onClick={() => removeFromCart(item._id)} className="text-red-500">
+                  Remove
+                </button>
               </div>
             ))
           )}
