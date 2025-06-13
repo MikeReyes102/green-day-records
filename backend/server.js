@@ -16,7 +16,8 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+const cors = require("cors");
+app.use(cors({ origin: "https://green-day-records.netlify.app/", credentials: true }));
 app.use(express.json());
 
 // Routes
