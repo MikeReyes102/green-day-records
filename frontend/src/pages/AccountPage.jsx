@@ -1,17 +1,41 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// AccountPage component displays user info, order history, and theme toggle
 const AccountPage = ({ toggleTheme, theme }) => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null); // Stores user details
+  const [orders, setOrders] = useState([]); // Stores user's order history
+  const token = localStorage.getItem("token"); // Get stored auth token
 
-  const mockUser = {
-    name: "John Doe",
-    email: "johndoe@example.com",
-    joined: "March 2023",
-    orders: [
-      { id: 1, title: "Abbey Road", status: "Shipped" },
-      { id: 2, title: "Dark Side of the Moon", status: "Processing" },
-    ],
-  };
+  // Fetch user data and order history on mount
+  useEffect(() => {
+    async function fetchUserData() {
+      if (!token) return;
+
+      try {
+        const response = await fetch("http://localhost:5000/users/profile", {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data.user); // Store user details
+          setOrders(data.orders); // Store order history with product info
+        } else {
+          console.error(
+            "❌ Failed to fetch account data:",
+            await response.json()
+          );
+        }
+      } catch (error) {
+        console.error("❌ Network Error:", error);
+      }
+    }
+
+    fetchUserData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-text p-6 flex flex-col items-center justify-center">
@@ -19,23 +43,45 @@ const AccountPage = ({ toggleTheme, theme }) => {
         <h1 className="text-3xl font-bold text-center">Account Settings</h1>
 
         {/* Account Details */}
-        <div className="mt-4 text-center">
-          <p className="text-lg font-semibold">Name: {mockUser.name}</p>
-          <p className="text-sm">Email: {mockUser.email}</p>
-          <p className="text-sm">Joined: {mockUser.joined}</p>
-        </div>
+        {user ? (
+          <div className="mt-4 text-center">
+            <p className="text-lg font-semibold">Name: {user.name}</p>
+            <p className="text-sm">Email: {user.email}</p>
+            <p className="text-sm">Joined: {user.joined}</p>
+          </div>
+        ) : (
+          <p className="text-center">Loading account details...</p>
+        )}
 
         {/* Order History */}
         <div className="mt-6">
           <h2 className="text-lg font-semibold">Order History</h2>
-          <ul className="list-disc list-inside text-text">
-            {mockUser.orders.map((order) => (
-              <li key={order.id}>{order.title} - {order.status}</li>
-            ))}
-          </ul>
+          {orders.length > 0 ? (
+            <ul className="list-disc list-inside text-text">
+              {orders.map((order) => (
+                <li key={order._id} className="mt-2">
+                  {/* List each item in the order */}
+                  {order.orderItems.map((item) => (
+                    <p key={item.product._id}>
+                      {item.quantity}x {item.product.title} by{" "}
+                      {item.product.artist} - ${item.product.price}
+                    </p>
+                  ))}
+                  <p className="text-sm">
+                    Status: {order.orderStatus} | Total: ${order.totalPrice}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    Ordered on {new Date(order.createdAt).toLocaleDateString()}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-center">No orders found.</p>
+          )}
         </div>
 
-        {/* Theme Toggle */}
+        {/* Theme Toggle Button */}
         <div className="flex justify-center mt-6">
           <button
             onClick={toggleTheme}
@@ -45,7 +91,7 @@ const AccountPage = ({ toggleTheme, theme }) => {
           </button>
         </div>
 
-        {/* Buttons */}
+        {/* Edit Account and Back Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center">
           <button className="w-full sm:w-auto px-4 py-2 primary-btn rounded-md transition">
             Edit Account

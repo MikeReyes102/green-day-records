@@ -1,28 +1,27 @@
 const mongoose = require("mongoose");
 
 // Define the product schema
-
 const productSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true },
-    artist: { type: String, required: true },
-    genre: { type: String, required: true },
-    releaseYear: { type: Number, required: true },
-    label: { type: String, required: true },
-    condition: { type: String, required: true },
-    price: { type: Number, required: true },
-    stock: { type: Number, required: true },
-    imageUrl: { type: String, required: true },
+    title: { type: String, required: true }, // Album title
+    artist: { type: String, required: true }, // Artist or band name
+    genre: { type: String, required: true }, // Music genre
+    releaseYear: { type: Number, required: true }, // Year of release
+    label: { type: String, required: true }, // Record label
+    condition: { type: String, required: true }, // Condition of the record (e.g., New, Used)
+    price: { type: Number, required: true }, // Price of the product
+    stock: { type: Number, required: true }, // Number of items in stock
+    imageUrl: { type: String, required: true }, // URL to the product image
     trackListing: [
       {
-        trackNumber: { type: Number, required: true },
-        title: { type: String, required: true },
-        duration: { type: String, required: true },
+        trackNumber: { type: Number, required: true }, // Track number on the album
+        title: { type: String, required: true }, // Track title
+        duration: { type: String, required: true }, // Duration of the track (e.g., "3:45")
       },
     ],
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically adds createdAt and updatedAt fields
   }
 );
 

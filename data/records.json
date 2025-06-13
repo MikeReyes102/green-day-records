@@ -1,1058 +1,3562 @@
-[
-  {
-    "title": "Please Please Me",
-    "artist": "The Beatles",
-    "genre": "Rock, Merseybeat",
-    "releaseYear": 1963,
-    "label": "Parlophone",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 7,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "I Saw Her Standing There",
-        "duration": "2:55"
-      },
-      { "trackNumber": 2, "title": "Misery", "duration": "1:49" },
-      { "trackNumber": 3, "title": "Anna (Go to Him)", "duration": "2:57" },
-      { "trackNumber": 4, "title": "Chains", "duration": "2:25" },
-      { "trackNumber": 5, "title": "Boys", "duration": "2:27" },
-      { "trackNumber": 6, "title": "Ask Me Why", "duration": "2:27" },
-      { "trackNumber": 7, "title": "Please Please Me", "duration": "2:00" },
-      { "trackNumber": 8, "title": "Love Me Do", "duration": "2:22" },
-      { "trackNumber": 9, "title": "P.S. I Love You", "duration": "2:05" },
-      { "trackNumber": 10, "title": "Baby It's You", "duration": "2:38" },
-      {
-        "trackNumber": 11,
-        "title": "Do You Want to Know a Secret",
-        "duration": "1:59"
-      },
-      { "trackNumber": 12, "title": "A Taste of Honey", "duration": "2:04" },
-      { "trackNumber": 13, "title": "There's a Place", "duration": "1:50" },
-      { "trackNumber": 14, "title": "Twist and Shout", "duration": "2:33" }
-    ]
+[{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf38f"
   },
-  {
-    "title": "Abbey Road",
-    "artist": "The Beatles",
-    "genre": "Rock, Progressive Rock",
-    "releaseYear": 1969,
-    "label": "Apple Records",
-    "condition": "New",
-    "price": 34.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Come Together", "duration": "4:20" },
-      { "trackNumber": 2, "title": "Something", "duration": "3:03" },
-      {
-        "trackNumber": 3,
-        "title": "Maxwell's Silver Hammer",
-        "duration": "3:27"
-      },
-      { "trackNumber": 4, "title": "Oh! Darling", "duration": "3:26" },
-      { "trackNumber": 5, "title": "Octopus's Garden", "duration": "2:51" },
-      {
-        "trackNumber": 6,
-        "title": "I Want You (She's So Heavy)",
-        "duration": "7:47"
-      },
-      { "trackNumber": 7, "title": "Here Comes the Sun", "duration": "3:05" },
-      { "trackNumber": 8, "title": "Because", "duration": "2:45" },
-      {
-        "trackNumber": 9,
-        "title": "You Never Give Me Your Money",
-        "duration": "4:02"
-      },
-      { "trackNumber": 10, "title": "Sun King", "duration": "2:26" },
-      { "trackNumber": 11, "title": "Mean Mr. Mustard", "duration": "1:06" },
-      { "trackNumber": 12, "title": "Polythene Pam", "duration": "1:12" },
-      {
-        "trackNumber": 13,
-        "title": "She Came in Through the Bathroom Window",
-        "duration": "1:57"
-      },
-      { "trackNumber": 14, "title": "Golden Slumbers", "duration": "1:31" },
-      { "trackNumber": 15, "title": "Carry That Weight", "duration": "1:37" },
-      { "trackNumber": 16, "title": "The End", "duration": "2:20" },
-      { "trackNumber": 17, "title": "Her Majesty", "duration": "0:23" }
-    ]
-  },
-  {
-    "title": "Dark Side of the Moon",
-    "artist": "Pink Floyd",
-    "genre": "Rock, Progressive Rock",
-    "releaseYear": 1973,
-    "label": "Harvest Records",
-    "condition": "New",
-    "price": 39.99,
-    "stock": 10,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Speak to Me", "duration": "1:30" },
-      { "trackNumber": 2, "title": "Breathe", "duration": "2:49" },
-      { "trackNumber": 3, "title": "On the Run", "duration": "3:30" },
-      { "trackNumber": 4, "title": "Time", "duration": "6:53" },
-      {
-        "trackNumber": 5,
-        "title": "The Great Gig in the Sky",
-        "duration": "4:15"
-      },
-      { "trackNumber": 6, "title": "Money", "duration": "6:22" },
-      { "trackNumber": 7, "title": "Us and Them", "duration": "7:50" },
-      { "trackNumber": 8, "title": "Any Colour You Like", "duration": "3:26" },
-      { "trackNumber": 9, "title": "Brain Damage", "duration": "3:50" },
-      { "trackNumber": 10, "title": "Eclipse", "duration": "2:06" }
-    ]
-  },
-  {
-    "title": "Back in Black",
-    "artist": "AC/DC",
-    "genre": "Rock, Hard Rock",
-    "releaseYear": 1980,
-    "label": "Atlantic Records",
-    "condition": "New",
-    "price": 24.99,
-    "stock": 8,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Hells Bells", "duration": "5:12" },
-      { "trackNumber": 2, "title": "Shoot to Thrill", "duration": "5:17" },
-      {
-        "trackNumber": 3,
-        "title": "What Do You Do for Money Honey",
-        "duration": "3:36"
-      },
-      { "trackNumber": 4, "title": "Givin the Dog a Bone", "duration": "3:31" },
-      {
-        "trackNumber": 5,
-        "title": "Let Me Put My Love Into You",
-        "duration": "4:12"
-      },
-      {
-        "trackNumber": 6,
-        "title": "You Shook Me All Night Long",
-        "duration": "3:30"
-      },
-      { "trackNumber": 7, "title": "'T.N.T.", "duration": "3:35" },
-      {
-        "trackNumber": 8,
-        "title": "'For Those About to Rock (We Salute You)",
-        "duration": "5:44"
+  "title": "Please Please Me",
+  "artist": "The Beatles",
+  "genre": "Rock",
+  "releaseYear": 1963,
+  "label": "Parlophone",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 7,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Please_Please_Me.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "I Saw Her Standing There",
+      "duration": "2:55",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9ca"
       }
-    ]
-  },
-  {
-    "title": "Foo Fighters",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge",
-    "releaseYear": 1995,
-    "label": "Roswell, Capitol",
-    "condition": "New",
-    "price": 24.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "This Is a Call", "duration": "3:53" },
-      { "trackNumber": 2, "title": "I'll Stick Around", "duration": "3:52" },
-      { "trackNumber": 3, "title": "Big Me", "duration": "2:12" },
-      { "trackNumber": 4, "title": "Alone + Easy Target", "duration": "4:05" },
-      { "trackNumber": 5, "title": "Good Grief", "duration": "4:01" },
-      { "trackNumber": 6, "title": "Floaty", "duration": "4:30" },
-      { "trackNumber": 7, "title": "Weenie Beenie", "duration": "2:45" },
-      { "trackNumber": 8, "title": "Oh, George", "duration": "3:00" },
-      { "trackNumber": 9, "title": "For All the Cows", "duration": "3:30" },
-      { "trackNumber": 10, "title": "X-Static", "duration": "4:13" },
-      { "trackNumber": 11, "title": "Wattershed", "duration": "2:15" },
-      { "trackNumber": 12, "title": "Exhausted", "duration": "5:45" }
-    ]
-  },
-  {
-    "title": "Dookie",
-    "artist": "Green Day",
-    "genre": "Punk Rock, Pop Punk, Skate Punk",
-    "releaseYear": 1994,
-    "label": "Reprise Records",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 8,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Burnout", "duration": "2:07" },
-      { "trackNumber": 2, "title": "Having a Blast", "duration": "2:44" },
-      { "trackNumber": 3, "title": "Chump", "duration": "2:54" },
-      { "trackNumber": 4, "title": "Longview", "duration": "3:59" },
-      { "trackNumber": 5, "title": "Welcome to Paradise", "duration": "3:44" },
-      { "trackNumber": 6, "title": "Pulling Teeth", "duration": "2:30" },
-      { "trackNumber": 7, "title": "Basket Case", "duration": "3:01" },
-      { "trackNumber": 8, "title": "She", "duration": "2:14" },
-      { "trackNumber": 9, "title": "Sassafras Roots", "duration": "2:37" },
-      { "trackNumber": 10, "title": "When I Come Around", "duration": "2:58" },
-      { "trackNumber": 11, "title": "Coming Clean", "duration": "1:35" },
-      { "trackNumber": 12, "title": "Emenius Sleepus", "duration": "1:43" },
-      { "trackNumber": 13, "title": "In the End", "duration": "1:46" },
-      { "trackNumber": 14, "title": "F.O.D.", "duration": "2:52" },
-      { "trackNumber": 15, "title": "All by Myself", "duration": "1:37" }
-    ]
-  },
-  {
-    "title": "Thriller",
-    "artist": "Michael Jackson",
-    "genre": "Pop, Post-Disco, Rock, Funk, Synth-Pop, R&B",
-    "releaseYear": 1982,
-    "label": "Epic Records",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 9,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "Wanna Be Startin’ Somethin’",
-        "duration": "6:02"
-      },
-      { "trackNumber": 2, "title": "Baby Be Mine", "duration": "4:20" },
-      { "trackNumber": 3, "title": "The Girl Is Mine", "duration": "3:42" },
-      { "trackNumber": 4, "title": "Thriller", "duration": "5:57" },
-      { "trackNumber": 5, "title": "Beat It", "duration": "4:18" },
-      { "trackNumber": 6, "title": "Billie Jean", "duration": "4:54" },
-      { "trackNumber": 7, "title": "Human Nature", "duration": "4:06" },
-      {
-        "trackNumber": 8,
-        "title": "P.Y.T. (Pretty Young Thing)",
-        "duration": "3:59"
-      },
-      { "trackNumber": 9, "title": "The Lady in My Life", "duration": "4:58" }
-    ]
-  },
-  {
-    "title": "Morning View",
-    "artist": "Incubus",
-    "genre": "Alternative Rock, Alternative Metal, Hard Rock, Soft Rock",
-    "releaseYear": 2001,
-    "label": "Epic Records, Immortal Records",
-    "condition": "New",
-    "price": 28.99,
-    "stock": 4,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Nice to Know You", "duration": "4:43" },
-      { "trackNumber": 2, "title": "Circles", "duration": "4:09" },
-      { "trackNumber": 3, "title": "Wish You Were Here", "duration": "3:34" },
-      { "trackNumber": 4, "title": "Just a Phase", "duration": "5:31" },
-      { "trackNumber": 5, "title": "11am", "duration": "4:14" },
-      { "trackNumber": 6, "title": "Blood on the Ground", "duration": "4:34" },
-      { "trackNumber": 7, "title": "Mexico", "duration": "4:20" },
-      { "trackNumber": 8, "title": "Warning", "duration": "4:40" },
-      { "trackNumber": 9, "title": "Echo", "duration": "3:34" },
-      { "trackNumber": 10, "title": "Have You Ever", "duration": "3:14" },
-      { "trackNumber": 11, "title": "Are You In?", "duration": "4:24" },
-      { "trackNumber": 12, "title": "Under My Umbrella", "duration": "3:31" },
-      { "trackNumber": 13, "title": "Aqueous Transmission", "duration": "7:48" }
-    ]
-  },
-  {
-    "title": "Malibu",
-    "artist": "Anderson .Paak",
-    "genre": "R&B, Hip Hop, Neo Soul",
-    "releaseYear": 2016,
-    "label": "ArtClub International, Empire, OBE, Steel Wool",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 7,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "The Bird", "duration": "3:38" },
-      {
-        "trackNumber": 2,
-        "title": "Heart Don't Stand a Chance",
-        "duration": "5:12"
-      },
-      {
-        "trackNumber": 3,
-        "title": "The Waters (Ft. BJ the Chicago Kid)",
-        "duration": "2:54"
-      },
-      {
-        "trackNumber": 4,
-        "title": "The Season / Carry Me",
-        "duration": "5:28"
-      },
-      { "trackNumber": 5, "title": "Put Me Thru", "duration": "2:40" },
-      {
-        "trackNumber": 6,
-        "title": "Am I Wrong (Ft. ScHoolboy Q)",
-        "duration": "4:13"
-      },
-      {
-        "trackNumber": 7,
-        "title": "Without You (Ft. Rapsody)",
-        "duration": "3:19"
-      },
-      { "trackNumber": 8, "title": "Parking Lot", "duration": "3:54" },
-      {
-        "trackNumber": 9,
-        "title": "Lite Weight (Ft. The Free Nationals United Fellowship Choir)",
-        "duration": "3:26"
-      },
-      {
-        "trackNumber": 10,
-        "title": "Room in Here (Ft. The Game & Sonyae)",
-        "duration": "3:59"
-      },
-      {
-        "trackNumber": 11,
-        "title": "Water Fall (Interluuube)",
-        "duration": "1:58"
-      },
-      { "trackNumber": 12, "title": "Your Prime", "duration": "3:57" },
-      { "trackNumber": 13, "title": "Come Down", "duration": "2:58" },
-      { "trackNumber": 14, "title": "Silicon Valley", "duration": "3:10" },
-      { "trackNumber": 15, "title": "Celebrate", "duration": "3:50" },
-      {
-        "trackNumber": 16,
-        "title": "The Dreamer (Ft. Talib Kweli & Timan Family Choir)",
-        "duration": "4:10"
+    },
+    {
+      "trackNumber": 2,
+      "title": "Misery",
+      "duration": "1:49",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9cb"
       }
-    ]
-  },
-  {
-    "title": "Ventura",
-    "artist": "Anderson .Paak",
-    "genre": "R&B, Soul, Funk",
-    "releaseYear": 2019,
-    "label": "12 Tone, Aftermath",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "Come Home (Ft. André 3000)",
-        "duration": "4:27"
-      },
-      {
-        "trackNumber": 2,
-        "title": "Make It Better (Ft. Smokey Robinson)",
-        "duration": "3:39"
-      },
-      {
-        "trackNumber": 3,
-        "title": "Reachin' 2 Much (Ft. Lalah Hathaway)",
-        "duration": "5:55"
-      },
-      { "trackNumber": 4, "title": "Winners Circle", "duration": "3:29" },
-      {
-        "trackNumber": 5,
-        "title": "Good Heels (Ft. Jazmine Sullivan)",
-        "duration": "1:38"
-      },
-      { "trackNumber": 6, "title": "Yada Yada", "duration": "3:28" },
-      { "trackNumber": 7, "title": "King James", "duration": "3:18" },
-      {
-        "trackNumber": 8,
-        "title": "Chosen One (Ft. Sonyae)",
-        "duration": "3:30"
-      },
-      {
-        "trackNumber": 9,
-        "title": "Jet Black (Ft. Brandy)",
-        "duration": "3:40"
-      },
-      { "trackNumber": 10, "title": "Twilight", "duration": "3:19" },
-      {
-        "trackNumber": 11,
-        "title": "What Can We Do? (Ft. Nate Dogg)",
-        "duration": "3:54"
+    },
+    {
+      "trackNumber": 3,
+      "title": "Anna (Go to Him)",
+      "duration": "2:57",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9cc"
       }
-    ]
-  },
-  {
-    "title": "Oxnard",
-    "artist": "Anderson .Paak",
-    "genre": "Hip Hop, Funk, Soul, R&B",
-    "releaseYear": 2018,
-    "label": "12Tone, Aftermath, OBE",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "The Chase (Ft. Kadhja Bonet)",
-        "duration": "3:23"
-      },
-      {
-        "trackNumber": 2,
-        "title": "Headlow (Ft. Norelle)",
-        "duration": "4:10"
-      },
-      {
-        "trackNumber": 3,
-        "title": "Tints (Ft. Kendrick Lamar)",
-        "duration": "5:04"
-      },
-      { "trackNumber": 4, "title": "Who R U?", "duration": "3:00" },
-      { "trackNumber": 5, "title": "6 Summers", "duration": "4:00" },
-      { "trackNumber": 6, "title": "Saviers Road", "duration": "3:30" },
-      {
-        "trackNumber": 7,
-        "title": "Smile / Petty (Ft. Sonyae)",
-        "duration": "3:50"
-      },
-      {
-        "trackNumber": 8,
-        "title": "Mansa Musa (Ft. Cocoa Sarai & Dr. Dre)",
-        "duration": "3:30"
-      },
-      {
-        "trackNumber": 9,
-        "title": "Brother's Keeper (Ft. Pusha T)",
-        "duration": "4:00"
-      },
-      {
-        "trackNumber": 10,
-        "title": "Anywhere (Ft. The Last Artful, Dodgr & Snoop Dogg)",
-        "duration": "3:50"
-      },
-      {
-        "trackNumber": 11,
-        "title": "Trippy (Ft. J. Cole)",
-        "duration": "4:54"
-      },
-      { "trackNumber": 12, "title": "Cheers (Ft. Q-Tip)", "duration": "4:20" },
-      {
-        "trackNumber": 13,
-        "title": "Sweet Chick (Ft. BJ the Chicago Kid)",
-        "duration": "3:44"
-      },
-      { "trackNumber": 14, "title": "Left to Right", "duration": "3:50" }
-    ]
-  },
-  {
-    "title": "An Evening with Silk Sonic",
-    "artist": "Silk Sonic (Bruno Mars & Anderson .Paak)",
-    "genre": "R&B, Soul, Funk",
-    "releaseYear": 2021,
-    "label": "Aftermath Entertainment, Atlantic Records",
-    "condition": "New",
-    "price": 33.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Silk Sonic Intro", "duration": "1:02" },
-      { "trackNumber": 2, "title": "Leave the Door Open", "duration": "4:02" },
-      { "trackNumber": 3, "title": "Fly As Me", "duration": "3:39" },
-      {
-        "trackNumber": 4,
-        "title": "After Last Night (Ft. Thundercat & Bootsy Collins)",
-        "duration": "4:09"
-      },
-      {
-        "trackNumber": 5,
-        "title": "Smokin Out the Window",
-        "duration": "3:17"
-      },
-      { "trackNumber": 6, "title": "Put On a Smile", "duration": "4:14" },
-      { "trackNumber": 7, "title": "777", "duration": "2:45" },
-      { "trackNumber": 8, "title": "Skate", "duration": "3:23" },
-      { "trackNumber": 9, "title": "Blast Off", "duration": "4:45" }
-    ]
-  },
-  {
-    "title": "Why Lawd?",
-    "artist": "NxWorries (Anderson .Paak & Knxwledge)",
-    "genre": "Neo Soul, R&B, Hip Hop",
-    "releaseYear": 2024,
-    "label": "Stones Throw Records",
-    "condition": "New",
-    "price": 34.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "ThankU (Ft. Dave Chappelle)",
-        "duration": "0:50"
-      },
-      { "trackNumber": 2, "title": "86Sentra", "duration": "1:36" },
-      { "trackNumber": 3, "title": "MoveOn", "duration": "2:47" },
-      {
-        "trackNumber": 4,
-        "title": "KeepHer (Ft. Thundercat)",
-        "duration": "4:14"
-      },
-      { "trackNumber": 5, "title": "Distractions", "duration": "1:49" },
-      { "trackNumber": 6, "title": "Lookin’", "duration": "0:54" },
-      {
-        "trackNumber": 7,
-        "title": "Where I Go (Ft. H.E.R.)",
-        "duration": "3:21"
-      },
-      { "trackNumber": 8, "title": "Daydreaming", "duration": "3:06" },
-      {
-        "trackNumber": 9,
-        "title": "FromHere (Ft. Snoop Dogg & October London)",
-        "duration": "4:01"
-      },
-      { "trackNumber": 10, "title": "FallThru", "duration": "2:21" },
-      { "trackNumber": 11, "title": "Battlefield", "duration": "3:38" },
-      { "trackNumber": 12, "title": "HereIAm", "duration": "1:34" },
-      {
-        "trackNumber": 13,
-        "title": "OutTheWay (Ft. Rae Khalil)",
-        "duration": "3:26"
-      },
-      { "trackNumber": 14, "title": "SheUsed", "duration": "2:36" },
-      { "trackNumber": 15, "title": "MoreOfIt", "duration": "1:12" }
-    ]
-  },
-  {
-    "title": "Yes Lawd!",
-    "artist": "NxWorries (Anderson .Paak & Knxwledge)",
-    "genre": "Neo Soul, R&B, Hip Hop",
-    "releaseYear": 2016,
-    "label": "Stones Throw Records",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Intro", "duration": "0:48" },
-      { "trackNumber": 2, "title": "Livvin", "duration": "2:45" },
-      { "trackNumber": 3, "title": "Wngs", "duration": "1:36" },
-      { "trackNumber": 4, "title": "Best One", "duration": "3:14" },
-      { "trackNumber": 5, "title": "What More Can I Say", "duration": "2:36" },
-      { "trackNumber": 6, "title": "Kutless", "duration": "2:07" },
-      { "trackNumber": 7, "title": "Lyk Dis", "duration": "2:30" },
-      { "trackNumber": 8, "title": "Can’t Stop", "duration": "2:01" },
-      {
-        "trackNumber": 9,
-        "title": "Get Bigger / Do U Luv",
-        "duration": "4:03"
-      },
-      { "trackNumber": 10, "title": "Khadijah", "duration": "2:02" },
-      { "trackNumber": 11, "title": "H.A.N.", "duration": "2:49" },
-      { "trackNumber": 12, "title": "Scared Money", "duration": "2:57" },
-      { "trackNumber": 13, "title": "Suede", "duration": "2:54" },
-      { "trackNumber": 14, "title": "Starlite", "duration": "3:23" },
-      { "trackNumber": 15, "title": "Sidepiece", "duration": "3:46" },
-      { "trackNumber": 16, "title": "Jodi", "duration": "1:09" },
-      { "trackNumber": 17, "title": "Link Up", "duration": "3:31" },
-      { "trackNumber": 18, "title": "Another Time", "duration": "2:27" },
-      { "trackNumber": 19, "title": "Fkku", "duration": "2:11" }
-    ]
-  },
-  {
-    "title": "The Colour and the Shape",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock",
-    "releaseYear": 1997,
-    "label": "Roswell Records, Capitol Records",
-    "condition": "New",
-    "price": 30.99,
-    "stock": 7,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Doll", "duration": "1:23" },
-      { "trackNumber": 2, "title": "Monkey Wrench", "duration": "3:51" },
-      { "trackNumber": 3, "title": "Hey, Johnny Park!", "duration": "4:08" },
-      { "trackNumber": 4, "title": "My Poor Brain", "duration": "3:34" },
-      { "trackNumber": 5, "title": "Wind Up", "duration": "2:31" },
-      { "trackNumber": 6, "title": "Up in Arms", "duration": "2:15" },
-      { "trackNumber": 7, "title": "My Hero", "duration": "4:20" },
-      { "trackNumber": 8, "title": "See You", "duration": "2:27" },
-      { "trackNumber": 9, "title": "Enough Space", "duration": "2:36" },
-      { "trackNumber": 10, "title": "February Stars", "duration": "4:49" },
-      { "trackNumber": 11, "title": "Everlong", "duration": "4:10" },
-      { "trackNumber": 12, "title": "Walking After You", "duration": "5:04" },
-      { "trackNumber": 13, "title": "New Way Home", "duration": "5:40" }
-    ]
-  },
-  {
-    "title": "There Is Nothing Left to Lose",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock",
-    "releaseYear": 1999,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 30.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Stacked Actors", "duration": "4:17" },
-      { "trackNumber": 2, "title": "Breakout", "duration": "3:21" },
-      { "trackNumber": 3, "title": "Learn to Fly", "duration": "3:58" },
-      { "trackNumber": 4, "title": "Gimme Stitches", "duration": "3:42" },
-      { "trackNumber": 5, "title": "Generator", "duration": "3:48" },
-      { "trackNumber": 6, "title": "Aurora", "duration": "5:50" },
-      { "trackNumber": 7, "title": "Live-In Skin", "duration": "3:53" },
-      { "trackNumber": 8, "title": "Next Year", "duration": "4:37" },
-      { "trackNumber": 9, "title": "Headwires", "duration": "4:38" },
-      { "trackNumber": 10, "title": "Ain't It the Life", "duration": "4:37" },
-      { "trackNumber": 11, "title": "M.I.A.", "duration": "4:03" }
-    ]
-  },
-  {
-    "title": "One by One",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock",
-    "releaseYear": 2002,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 7,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "All My Life", "duration": "4:23" },
-      { "trackNumber": 2, "title": "Low", "duration": "4:28" },
-      { "trackNumber": 3, "title": "Have It All", "duration": "4:57" },
-      { "trackNumber": 4, "title": "Times Like These", "duration": "4:26" },
-      { "trackNumber": 5, "title": "Disenchanted Lullaby", "duration": "4:33" },
-      { "trackNumber": 6, "title": "Tired of You", "duration": "5:11" },
-      { "trackNumber": 7, "title": "Halo", "duration": "5:06" },
-      { "trackNumber": 8, "title": "Lonely as You", "duration": "4:37" },
-      { "trackNumber": 9, "title": "Overdrive", "duration": "4:30" },
-      { "trackNumber": 10, "title": "Burn Away", "duration": "4:58" },
-      { "trackNumber": 11, "title": "Come Back", "duration": "7:51" }
-    ]
-  },
-  {
-    "title": "In Your Honor",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock, Acoustic Rock",
-    "releaseYear": 2005,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "In Your Honor", "duration": "3:50" },
-      { "trackNumber": 2, "title": "No Way Back", "duration": "3:16" },
-      { "trackNumber": 3, "title": "Best of You", "duration": "4:15" },
-      { "trackNumber": 4, "title": "DOA", "duration": "4:12" },
-      { "trackNumber": 5, "title": "Hell", "duration": "1:57" },
-      { "trackNumber": 6, "title": "The Last Song", "duration": "3:19" },
-      { "trackNumber": 7, "title": "Free Me", "duration": "4:38" },
-      { "trackNumber": 8, "title": "Resolve", "duration": "4:48" },
-      {
-        "trackNumber": 9,
-        "title": "The Deepest Blues Are Black",
-        "duration": "3:58"
-      },
-      { "trackNumber": 10, "title": "End Over End", "duration": "5:51" },
-      { "trackNumber": 11, "title": "Still", "duration": "5:13" },
-      { "trackNumber": 12, "title": "What If I Do?", "duration": "5:02" },
-      { "trackNumber": 13, "title": "Miracle", "duration": "3:29" },
-      { "trackNumber": 14, "title": "Another Round", "duration": "4:25" },
-      { "trackNumber": 15, "title": "Friend of a Friend", "duration": "3:13" },
-      { "trackNumber": 16, "title": "Over and Out", "duration": "5:16" },
-      { "trackNumber": 17, "title": "On the Mend", "duration": "4:31" },
-      { "trackNumber": 18, "title": "Virginia Moon", "duration": "3:49" },
-      { "trackNumber": 19, "title": "Cold Day in the Sun", "duration": "3:20" },
-      { "trackNumber": 20, "title": "Razor", "duration": "4:53" }
-    ]
-  },
-  {
-    "title": "Echoes, Silence, Patience & Grace",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock",
-    "releaseYear": 2007,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "The Pretender", "duration": "4:29" },
-      { "trackNumber": 2, "title": "Let It Die", "duration": "4:05" },
-      { "trackNumber": 3, "title": "Erase/Replace", "duration": "4:13" },
-      { "trackNumber": 4, "title": "Long Road to Ruin", "duration": "3:44" },
-      { "trackNumber": 5, "title": "Come Alive", "duration": "5:10" },
-      {
-        "trackNumber": 6,
-        "title": "Stranger Things Have Happened",
-        "duration": "5:21"
-      },
-      {
-        "trackNumber": 7,
-        "title": "Cheer Up, Boys (Your Make-Up Is Running)",
-        "duration": "3:41"
-      },
-      { "trackNumber": 8, "title": "Summer's End", "duration": "4:37" },
-      {
-        "trackNumber": 9,
-        "title": "Ballad of the Beaconsfield Miners",
-        "duration": "2:32"
-      },
-      { "trackNumber": 10, "title": "Statues", "duration": "3:47" },
-      { "trackNumber": 11, "title": "But, Honestly", "duration": "4:35" },
-      { "trackNumber": 12, "title": "Home", "duration": "4:53" }
-    ]
-  },
-  {
-    "title": "Wasting Light",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Hard Rock, Post-Grunge",
-    "releaseYear": 2011,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Bridge Burning", "duration": "4:47" },
-      { "trackNumber": 2, "title": "Rope", "duration": "4:06" },
-      { "trackNumber": 3, "title": "Dear Rosemary", "duration": "4:27" },
-      { "trackNumber": 4, "title": "White Limo", "duration": "3:22" },
-      { "trackNumber": 5, "title": "Arlandria", "duration": "4:28" },
-      { "trackNumber": 6, "title": "These Days", "duration": "4:58" },
-      { "trackNumber": 7, "title": "Back & Forth", "duration": "3:52" },
-      { "trackNumber": 8, "title": "A Matter of Time", "duration": "4:36" },
-      { "trackNumber": 9, "title": "Miss the Misery", "duration": "4:33" },
-      { "trackNumber": 10, "title": "I Should Have Known", "duration": "4:16" },
-      { "trackNumber": 11, "title": "Walk", "duration": "4:16" }
-    ]
-  },
-  {
-    "title": "Sonic Highways",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Post-Grunge, Hard Rock",
-    "releaseYear": 2014,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "Something from Nothing",
-        "duration": "4:49"
-      },
-      {
-        "trackNumber": 2,
-        "title": "The Feast and the Famine",
-        "duration": "3:50"
-      },
-      { "trackNumber": 3, "title": "Congregation", "duration": "5:12" },
-      {
-        "trackNumber": 4,
-        "title": "What Did I Do?/God As My Witness",
-        "duration": "5:44"
-      },
-      { "trackNumber": 5, "title": "Outside", "duration": "5:14" },
-      { "trackNumber": 6, "title": "In the Clear", "duration": "4:04" },
-      { "trackNumber": 7, "title": "Subterranean", "duration": "6:08" },
-      { "trackNumber": 8, "title": "I Am a River", "duration": "7:09" }
-    ]
-  },
-  {
-    "title": "Concrete and Gold",
-    "artist": "Foo Fighters",
-    "genre": "Hard Rock, Progressive Rock",
-    "releaseYear": 2017,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "T-Shirt", "duration": "1:23" },
-      { "trackNumber": 2, "title": "Run", "duration": "5:23" },
-      { "trackNumber": 3, "title": "Make It Right", "duration": "4:39" },
-      {
-        "trackNumber": 4,
-        "title": "The Sky Is a Neighborhood",
-        "duration": "4:05"
-      },
-      { "trackNumber": 5, "title": "La Dee Da", "duration": "4:03" },
-      { "trackNumber": 6, "title": "Dirty Water", "duration": "5:21" },
-      { "trackNumber": 7, "title": "Arrows", "duration": "4:26" },
-      {
-        "trackNumber": 8,
-        "title": "Happy Ever After (Zero Hour)",
-        "duration": "3:41"
-      },
-      { "trackNumber": 9, "title": "Sunday Rain", "duration": "6:11" },
-      { "trackNumber": 10, "title": "The Line", "duration": "3:38" },
-      { "trackNumber": 11, "title": "Concrete and Gold", "duration": "5:38" }
-    ]
-  },
-  {
-    "title": "Medicine at Midnight",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Hard Rock, Pop Rock, Power Pop, Dance-Rock",
-    "releaseYear": 2021,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 31.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Making a Fire", "duration": "4:15" },
-      { "trackNumber": 2, "title": "Shame Shame", "duration": "4:17" },
-      { "trackNumber": 3, "title": "Cloudspotter", "duration": "3:53" },
-      { "trackNumber": 4, "title": "Waiting on a War", "duration": "4:14" },
-      { "trackNumber": 5, "title": "Medicine at Midnight", "duration": "3:30" },
-      { "trackNumber": 6, "title": "No Son of Mine", "duration": "3:29" },
-      { "trackNumber": 7, "title": "Holding Poison", "duration": "4:24" },
-      { "trackNumber": 8, "title": "Chasing Birds", "duration": "4:12" },
-      { "trackNumber": 9, "title": "Love Dies Young", "duration": "4:22" }
-    ]
-  },
-  {
-    "title": "But Here We Are",
-    "artist": "Foo Fighters",
-    "genre": "Alternative Rock, Arena Rock",
-    "releaseYear": 2023,
-    "label": "Roswell Records, RCA Records",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 5,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Rescued", "duration": "4:19" },
-      { "trackNumber": 2, "title": "Under You", "duration": "3:39" },
-      { "trackNumber": 3, "title": "Hearing Voices", "duration": "3:49" },
-      { "trackNumber": 4, "title": "But Here We Are", "duration": "4:43" },
-      { "trackNumber": 5, "title": "The Glass", "duration": "3:50" },
-      { "trackNumber": 6, "title": "Nothing at All", "duration": "3:28" },
-      {
-        "trackNumber": 7,
-        "title": "Show Me How (Ft. Violet Grohl)",
-        "duration": "4:54"
-      },
-      { "trackNumber": 8, "title": "Beyond Me", "duration": "3:54" },
-      { "trackNumber": 9, "title": "The Teacher", "duration": "10:04" },
-      { "trackNumber": 10, "title": "Rest", "duration": "5:34" }
-    ]
-  },
-  {
-    "title": "Insomniac",
-    "artist": "Green Day",
-    "genre": "Punk Rock, Alternative Rock",
-    "releaseYear": 1995,
-    "label": "Reprise Records",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Armatage Shanks", "duration": "2:17" },
-      { "trackNumber": 2, "title": "Brat", "duration": "1:43" },
-      { "trackNumber": 3, "title": "Stuck with Me", "duration": "2:07" },
-      { "trackNumber": 4, "title": "Geek Stink Breath", "duration": "2:15" },
-      { "trackNumber": 5, "title": "No Pride", "duration": "2:19" },
-      { "trackNumber": 6, "title": "Bab's Uvula Who?", "duration": "2:08" },
-      { "trackNumber": 7, "title": "86", "duration": "2:48" },
-      { "trackNumber": 8, "title": "Panic Song", "duration": "3:35" },
-      { "trackNumber": 9, "title": "Stuart and the Ave.", "duration": "2:03" },
-      { "trackNumber": 10, "title": "Brain Stew", "duration": "3:13" },
-      { "trackNumber": 11, "title": "Jaded", "duration": "1:30" },
-      { "trackNumber": 12, "title": "Westbound Sign", "duration": "2:13" },
-      { "trackNumber": 13, "title": "Tight Wad Hill", "duration": "2:01" },
-      {
-        "trackNumber": 14,
-        "title": "Walking Contradiction",
-        "duration": "2:31"
+    },
+    {
+      "trackNumber": 4,
+      "title": "Chains",
+      "duration": "2:25",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9cd"
       }
-    ]
-  },
-  {
-    "title": "Discovering the Waterfront",
-    "artist": "Silverstein",
-    "genre": "Post-Hardcore, Emo, Screamo, Pop Punk",
-    "releaseYear": 2005,
-    "label": "Victory Records",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "Your Sword Versus My Dagger",
-        "duration": "2:59"
-      },
-      { "trackNumber": 2, "title": "Smile in Your Sleep", "duration": "3:14" },
-      { "trackNumber": 3, "title": "The Ides of March", "duration": "3:27" },
-      {
-        "trackNumber": 4,
-        "title": "Fist Wrapped in Blood",
-        "duration": "2:57"
-      },
-      {
-        "trackNumber": 5,
-        "title": "Discovering the Waterfront",
-        "duration": "4:45"
-      },
-      { "trackNumber": 6, "title": "Defend You", "duration": "3:28" },
-      { "trackNumber": 7, "title": "My Heroine", "duration": "3:28" },
-      { "trackNumber": 8, "title": "Always and Never", "duration": "3:50" },
-      { "trackNumber": 9, "title": "Already Dead", "duration": "3:17" },
-      { "trackNumber": 10, "title": "Three Hours Back", "duration": "3:35" },
-      { "trackNumber": 11, "title": "Call It Karma", "duration": "4:14" }
-    ]
-  },
-  {
-    "title": "When Broken Is Easily Fixed",
-    "artist": "Silverstein",
-    "genre": "Post-Hardcore, Emo, Screamo",
-    "releaseYear": 2003,
-    "label": "Victory Records",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Smashed Into Pieces", "duration": "3:04" },
-      { "trackNumber": 2, "title": "Red Light Pledge", "duration": "3:50" },
-      { "trackNumber": 3, "title": "Giving Up", "duration": "3:10" },
-      { "trackNumber": 4, "title": "November", "duration": "3:05" },
-      { "trackNumber": 5, "title": "Last Days of Summer", "duration": "3:07" },
-      { "trackNumber": 6, "title": "Bleeds No More", "duration": "3:16" },
-      { "trackNumber": 7, "title": "Hear Me Out", "duration": "3:33" },
-      {
-        "trackNumber": 8,
-        "title": "The Weak and the Wounded",
-        "duration": "3:14"
-      },
-      {
-        "trackNumber": 9,
-        "title": "Wish I Could Forget You",
-        "duration": "3:27"
-      },
-      {
-        "trackNumber": 10,
-        "title": "When Broken Is Easily Fixed (Ft. Kyle Bishop)",
-        "duration": "4:19"
-      },
-      {
-        "trackNumber": 11,
-        "title": "Friends in Fall River",
-        "duration": "2:43"
-      },
-      { "trackNumber": 12, "title": "Forever and a Day", "duration": "3:22" }
-    ]
-  },
-  {
-    "title": "Get Rich or Die Tryin'",
-    "artist": "50 Cent",
-    "genre": "East Coast Hip Hop, Hardcore Hip Hop, Gangsta Rap, Boom Bap",
-    "releaseYear": 2003,
-    "label": "Interscope Records, Shady Records, Aftermath Entertainment, G-Unit Records",
-    "condition": "New",
-    "price": 29.99,
-    "stock": 7,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      { "trackNumber": 1, "title": "Intro", "duration": "0:06" },
-      { "trackNumber": 2, "title": "What Up Gangsta", "duration": "2:59" },
-      {
-        "trackNumber": 3,
-        "title": "Patiently Waiting (Ft. Eminem)",
-        "duration": "4:48"
-      },
-      {
-        "trackNumber": 4,
-        "title": "Many Men (Wish Death)",
-        "duration": "4:16"
-      },
-      { "trackNumber": 5, "title": "In da Club", "duration": "3:13" },
-      { "trackNumber": 6, "title": "High All the Time", "duration": "4:29" },
-      { "trackNumber": 7, "title": "Heat", "duration": "4:14" },
-      { "trackNumber": 8, "title": "If I Can't", "duration": "3:16" },
-      {
-        "trackNumber": 9,
-        "title": "Blood Hound (Ft. Young Buck)",
-        "duration": "4:00"
-      },
-      { "trackNumber": 10, "title": "Back Down", "duration": "4:03" },
-      { "trackNumber": 11, "title": "P.I.M.P.", "duration": "4:09" },
-      {
-        "trackNumber": 12,
-        "title": "Like My Style (Ft. Tony Yayo)",
-        "duration": "3:13"
-      },
-      { "trackNumber": 13, "title": "Poor Lil Rich", "duration": "3:19" },
-      {
-        "trackNumber": 14,
-        "title": "21 Questions (Ft. Nate Dogg)",
-        "duration": "3:44"
-      },
-      {
-        "trackNumber": 15,
-        "title": "Don't Push Me (Ft. Eminem & Lloyd Banks)",
-        "duration": "4:09"
-      },
-      {
-        "trackNumber": 16,
-        "title": "Gotta Make It to Heaven",
-        "duration": "4:00"
+    },
+    {
+      "trackNumber": 5,
+      "title": "Boys",
+      "duration": "2:27",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9ce"
       }
-    ]
-  },
-  {
-    "title": "4 Your Eyez Only",
-    "artist": "J. Cole",
-    "genre": "Hip Hop, Conscious Rap",
-    "releaseYear": 2016,
-    "label": "Dreamville, Roc Nation, Interscope Records",
-    "condition": "New",
-    "price": 30.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "For Whom the Bell Tolls",
-        "duration": "2:07"
-      },
-      { "trackNumber": 2, "title": "Immortal", "duration": "3:21" },
-      { "trackNumber": 3, "title": "Deja Vu", "duration": "4:26" },
-      { "trackNumber": 4, "title": "Ville Mentality", "duration": "3:29" },
-      { "trackNumber": 5, "title": "She's Mine Pt. 1", "duration": "3:50" },
-      { "trackNumber": 6, "title": "Change", "duration": "5:31" },
-      { "trackNumber": 7, "title": "Neighbors", "duration": "3:36" },
-      { "trackNumber": 8, "title": "Foldin Clothes", "duration": "5:02" },
-      { "trackNumber": 9, "title": "She's Mine Pt. 2", "duration": "4:39" },
-      { "trackNumber": 10, "title": "4 Your Eyez Only", "duration": "8:50" }
-    ]
-  },
-  {
-    "title": "Anti",
-    "artist": "Rihanna",
-    "genre": "Pop, Dancehall, Psychedelic Soul, Alternative R&B",
-    "releaseYear": 2016,
-    "label": "Westbury Road, Roc Nation",
-    "condition": "New",
-    "price": 32.99,
-    "stock": 6,
-    "imageUrl": "https://example.com/placeholder.jpg",
-    "trackListing": [
-      {
-        "trackNumber": 1,
-        "title": "Consideration (Ft. SZA)",
-        "duration": "2:41"
-      },
-      { "trackNumber": 2, "title": "James Joint", "duration": "1:12" },
-      { "trackNumber": 3, "title": "Kiss It Better", "duration": "4:13" },
-      { "trackNumber": 4, "title": "Work (Ft. Drake)", "duration": "3:39" },
-      { "trackNumber": 5, "title": "Desperado", "duration": "3:06" },
-      { "trackNumber": 6, "title": "Woo", "duration": "3:55" },
-      { "trackNumber": 7, "title": "Needed Me", "duration": "3:11" },
-      { "trackNumber": 8, "title": "Yeah, I Said It", "duration": "2:13" },
-      { "trackNumber": 9, "title": "Same Ol' Mistakes", "duration": "6:37" },
-      { "trackNumber": 10, "title": "Never Ending", "duration": "3:23" },
-      { "trackNumber": 11, "title": "Love on the Brain", "duration": "3:44" },
-      { "trackNumber": 12, "title": "Higher", "duration": "2:01" },
-      { "trackNumber": 13, "title": "Close to You", "duration": "3:42" }
-    ]
+    },
+    {
+      "trackNumber": 6,
+      "title": "Ask Me Why",
+      "duration": "2:27",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9cf"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Please Please Me",
+      "duration": "2:00",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d0"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Love Me Do",
+      "duration": "2:22",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d1"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "P.S. I Love You",
+      "duration": "2:05",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d2"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Baby It's You",
+      "duration": "2:38",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d3"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Do You Want to Know a Secret",
+      "duration": "1:59",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d4"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "A Taste of Honey",
+      "duration": "2:04",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d5"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "There's a Place",
+      "duration": "1:50",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d6"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Twist and Shout",
+      "duration": "2:33",
+      "_id": {
+        "$oid": "684ab80e01f0b945bc2fe9d7"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:18:02.366Z"
   }
-]
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf390"
+  },
+  "title": "Abbey Road",
+  "artist": "The Beatles",
+  "genre": "Rock, Progressive Rock",
+  "releaseYear": 1969,
+  "label": "Apple Records",
+  "condition": "New",
+  "price": 34.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Come Together",
+      "duration": "4:20",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1e6"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Something",
+      "duration": "3:03",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1e7"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Maxwell's Silver Hammer",
+      "duration": "3:27",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1e8"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Oh! Darling",
+      "duration": "3:26",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1e9"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Octopus's Garden",
+      "duration": "2:51",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1ea"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "I Want You (She's So Heavy)",
+      "duration": "7:47",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1eb"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Here Comes the Sun",
+      "duration": "3:05",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1ec"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Because",
+      "duration": "2:45",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1ed"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "You Never Give Me Your Money",
+      "duration": "4:02",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1ee"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Sun King",
+      "duration": "2:26",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1ef"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Mean Mr. Mustard",
+      "duration": "1:06",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f0"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Polythene Pam",
+      "duration": "1:12",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f1"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "She Came in Through the Bathroom Window",
+      "duration": "1:57",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f2"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Golden Slumbers",
+      "duration": "1:31",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f3"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "Carry That Weight",
+      "duration": "1:37",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f4"
+      }
+    },
+    {
+      "trackNumber": 16,
+      "title": "The End",
+      "duration": "2:20",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f5"
+      }
+    },
+    {
+      "trackNumber": 17,
+      "title": "Her Majesty",
+      "duration": "0:23",
+      "_id": {
+        "$oid": "684b5c3839b220fab17cc1f6"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:01:22.316Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf391"
+  },
+  "title": "Dark Side of the Moon",
+  "artist": "Pink Floyd",
+  "genre": "Rock, Progressive Rock",
+  "releaseYear": 1973,
+  "label": "Harvest Records",
+  "condition": "New",
+  "price": 39.99,
+  "stock": 10,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Speak to Me",
+      "duration": "1:30",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc515"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Breathe",
+      "duration": "2:49",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc516"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "On the Run",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc517"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Time",
+      "duration": "6:53",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc518"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "The Great Gig in the Sky",
+      "duration": "4:15",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc519"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Money",
+      "duration": "6:22",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc51a"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Us and Them",
+      "duration": "7:50",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc51b"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Any Colour You Like",
+      "duration": "3:26",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc51c"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Brain Damage",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc51d"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Eclipse",
+      "duration": "2:06",
+      "_id": {
+        "$oid": "684b5c5d39b220fab17cc51e"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:01:55.539Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf392"
+  },
+  "title": "Back in Black",
+  "artist": "AC/DC",
+  "genre": "Rock, Hard Rock",
+  "releaseYear": 1980,
+  "label": "Atlantic Records",
+  "condition": "New",
+  "price": 24.99,
+  "stock": 8,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/ACDC_Back_in_Black.png/800px-ACDC_Back_in_Black.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Hells Bells",
+      "duration": "5:12",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc82d"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Shoot to Thrill",
+      "duration": "5:17",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc82e"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "What Do You Do for Money Honey",
+      "duration": "3:36",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc82f"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Givin the Dog a Bone",
+      "duration": "3:31",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc830"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Let Me Put My Love Into You",
+      "duration": "4:12",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc831"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "You Shook Me All Night Long",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc832"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "'T.N.T.",
+      "duration": "3:35",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc833"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "'For Those About to Rock (We Salute You)",
+      "duration": "5:44",
+      "_id": {
+        "$oid": "684b5c7839b220fab17cc834"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:02:21.491Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf393"
+  },
+  "title": "Foo Fighters",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge",
+  "releaseYear": 1995,
+  "label": "Roswell, Capitol",
+  "condition": "New",
+  "price": 24.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0d/FooFighters-FooFighters.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "This Is a Call",
+      "duration": "3:53",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb43"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "I'll Stick Around",
+      "duration": "3:52",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb44"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Big Me",
+      "duration": "2:12",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb45"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Alone + Easy Target",
+      "duration": "4:05",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb46"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Good Grief",
+      "duration": "4:01",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb47"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Floaty",
+      "duration": "4:30",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb48"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Weenie Beenie",
+      "duration": "2:45",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb49"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Oh, George",
+      "duration": "3:00",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb4a"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "For All the Cows",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb4b"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "X-Static",
+      "duration": "4:13",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb4c"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Wattershed",
+      "duration": "2:15",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb4d"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Exhausted",
+      "duration": "5:45",
+      "_id": {
+        "$oid": "684b5ca739b220fab17ccb4e"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:03:19.417Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf394"
+  },
+  "title": "Dookie",
+  "artist": "Green Day",
+  "genre": "Punk Rock, Pop Punk, Skate Punk",
+  "releaseYear": 1994,
+  "label": "Reprise Records",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 8,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4b/Green_Day_-_Dookie_cover.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Burnout",
+      "duration": "2:07",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd176"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Having a Blast",
+      "duration": "2:44",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd177"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Chump",
+      "duration": "2:54",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd178"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Longview",
+      "duration": "3:59",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd179"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Welcome to Paradise",
+      "duration": "3:44",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17a"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Pulling Teeth",
+      "duration": "2:30",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17b"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Basket Case",
+      "duration": "3:01",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17c"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "She",
+      "duration": "2:14",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17d"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Sassafras Roots",
+      "duration": "2:37",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17e"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "When I Come Around",
+      "duration": "2:58",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd17f"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Coming Clean",
+      "duration": "1:35",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd180"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Emenius Sleepus",
+      "duration": "1:43",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd181"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "In the End",
+      "duration": "1:46",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd182"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "F.O.D.",
+      "duration": "2:52",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd183"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "All by Myself",
+      "duration": "1:37",
+      "_id": {
+        "$oid": "684b5cd939b220fab17cd184"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:03:56.633Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf395"
+  },
+  "title": "Thriller",
+  "artist": "Michael Jackson",
+  "genre": "Pop, Post-Disco, Rock, Funk, Synth-Pop, R&B",
+  "releaseYear": 1982,
+  "label": "Epic Records",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 9,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Wanna Be Startin’ Somethin’",
+      "duration": "6:02",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd49e"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Baby Be Mine",
+      "duration": "4:20",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd49f"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "The Girl Is Mine",
+      "duration": "3:42",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a0"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Thriller",
+      "duration": "5:57",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a1"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Beat It",
+      "duration": "4:18",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a2"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Billie Jean",
+      "duration": "4:54",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a3"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Human Nature",
+      "duration": "4:06",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a4"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "P.Y.T. (Pretty Young Thing)",
+      "duration": "3:59",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a5"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "The Lady in My Life",
+      "duration": "4:58",
+      "_id": {
+        "$oid": "684b5cea39b220fab17cd4a6"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:04:15.067Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf396"
+  },
+  "title": "Morning View",
+  "artist": "Incubus",
+  "genre": "Alternative Rock ",
+  "releaseYear": 2001,
+  "label": "Epic Records, Immortal Records",
+  "condition": "New",
+  "price": 28.99,
+  "stock": 4,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/68/Incubus_-_Morning_View.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Nice to Know You",
+      "duration": "4:43",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7b8"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Circles",
+      "duration": "4:09",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7b9"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Wish You Were Here",
+      "duration": "3:34",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7ba"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Just a Phase",
+      "duration": "5:31",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7bb"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "11am",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7bc"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Blood on the Ground",
+      "duration": "4:34",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7bd"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Mexico",
+      "duration": "4:20",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7be"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Warning",
+      "duration": "4:40",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7bf"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Echo",
+      "duration": "3:34",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7c0"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Have You Ever",
+      "duration": "3:14",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7c1"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Are You In?",
+      "duration": "4:24",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7c2"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Under My Umbrella",
+      "duration": "3:31",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7c3"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Aqueous Transmission",
+      "duration": "7:48",
+      "_id": {
+        "$oid": "684b5d0b39b220fab17cd7c4"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:05:11.120Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf397"
+  },
+  "title": "Malibu",
+  "artist": "Anderson .Paak",
+  "genre": "R&B, Hip Hop, Neo Soul",
+  "releaseYear": 2016,
+  "label": "ArtClub International, Empire, OBE, Steel Wool",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 7,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/01/Anderson-Park-Malibu-Cover-Billboard-650x650.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "The Bird",
+      "duration": "3:38",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3e5"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Heart Don't Stand a Chance",
+      "duration": "5:12",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3e6"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "The Waters (Ft. BJ the Chicago Kid)",
+      "duration": "2:54",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3e7"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "The Season / Carry Me",
+      "duration": "5:28",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3e8"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Put Me Thru",
+      "duration": "2:40",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3e9"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Am I Wrong (Ft. ScHoolboy Q)",
+      "duration": "4:13",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3ea"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Without You (Ft. Rapsody)",
+      "duration": "3:19",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3eb"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Parking Lot",
+      "duration": "3:54",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3ec"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Lite Weight (Ft. The Free Nationals United Fellowship Choir)",
+      "duration": "3:26",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3ed"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Room in Here (Ft. The Game & Sonyae)",
+      "duration": "3:59",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3ee"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Water Fall (Interluuube)",
+      "duration": "1:58",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3ef"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Your Prime",
+      "duration": "3:57",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3f0"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Come Down",
+      "duration": "2:58",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3f1"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Silicon Valley",
+      "duration": "3:10",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3f2"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "Celebrate",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3f3"
+      }
+    },
+    {
+      "trackNumber": 16,
+      "title": "The Dreamer (Ft. Talib Kweli & Timan Family Choir)",
+      "duration": "4:10",
+      "_id": {
+        "$oid": "684b5d7539b220fab17ce3f4"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:06:40.818Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf398"
+  },
+  "title": "Ventura",
+  "artist": "Anderson .Paak",
+  "genre": "R&B, Soul, Funk",
+  "releaseYear": 2019,
+  "label": "12 Tone, Aftermath",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/57/Anderson_Paak_-_Ventura.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Come Home (Ft. André 3000)",
+      "duration": "4:27",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce712"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Make It Better (Ft. Smokey Robinson)",
+      "duration": "3:39",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce713"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Reachin' 2 Much (Ft. Lalah Hathaway)",
+      "duration": "5:55",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce714"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Winners Circle",
+      "duration": "3:29",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce715"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Good Heels (Ft. Jazmine Sullivan)",
+      "duration": "1:38",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce716"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Yada Yada",
+      "duration": "3:28",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce717"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "King James",
+      "duration": "3:18",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce718"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Chosen One (Ft. Sonyae)",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce719"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Jet Black (Ft. Brandy)",
+      "duration": "3:40",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce71a"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Twilight",
+      "duration": "3:19",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce71b"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "What Can We Do? (Ft. Nate Dogg)",
+      "duration": "3:54",
+      "_id": {
+        "$oid": "684b5da739b220fab17ce71c"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:07:22.456Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf399"
+  },
+  "title": "Oxnard",
+  "artist": "Anderson .Paak",
+  "genre": "Hip Hop, Funk, Soul, R&B",
+  "releaseYear": 2018,
+  "label": "12Tone, Aftermath, OBE",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6a/Anderson_Paak_Oxnard.jpeg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "The Chase (Ft. Kadhja Bonet)",
+      "duration": "3:23",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea33"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Headlow (Ft. Norelle)",
+      "duration": "4:10",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea34"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Tints (Ft. Kendrick Lamar)",
+      "duration": "5:04",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea35"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Who R U?",
+      "duration": "3:00",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea36"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "6 Summers",
+      "duration": "4:00",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea37"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Saviers Road",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea38"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Smile / Petty (Ft. Sonyae)",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea39"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Mansa Musa (Ft. Cocoa Sarai & Dr. Dre)",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3a"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Brother's Keeper (Ft. Pusha T)",
+      "duration": "4:00",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3b"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Anywhere (Ft. The Last Artful, Dodgr & Snoop Dogg)",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3c"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Trippy (Ft. J. Cole)",
+      "duration": "4:54",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3d"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Cheers (Ft. Q-Tip)",
+      "duration": "4:20",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3e"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Sweet Chick (Ft. BJ the Chicago Kid)",
+      "duration": "3:44",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea3f"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Left to Right",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5db839b220fab17cea40"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:07:39.175Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39a"
+  },
+  "title": "An Evening with Silk Sonic",
+  "artist": "Silk Sonic (Bruno Mars & Anderson .Paak)",
+  "genre": "R&B, Soul, Funk",
+  "releaseYear": 2021,
+  "label": "Aftermath Entertainment, Atlantic Records",
+  "condition": "New",
+  "price": 33.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8e/Silk_Sonic_-_An_Evening_with_Silk_Sonic.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Silk Sonic Intro",
+      "duration": "1:02",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced58"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Leave the Door Open",
+      "duration": "4:02",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced59"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Fly As Me",
+      "duration": "3:39",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5a"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "After Last Night (Ft. Thundercat & Bootsy Collins)",
+      "duration": "4:09",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5b"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Smokin Out the Window",
+      "duration": "3:17",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5c"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Put On a Smile",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5d"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "777",
+      "duration": "2:45",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5e"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Skate",
+      "duration": "3:23",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced5f"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Blast Off",
+      "duration": "4:45",
+      "_id": {
+        "$oid": "684b5dc439b220fab17ced60"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:07:57.286Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39b"
+  },
+  "title": "Why Lawd?",
+  "artist": "NxWorries (Anderson .Paak & Knxwledge)",
+  "genre": "Neo Soul, R&B, Hip Hop",
+  "releaseYear": 2024,
+  "label": "Stones Throw Records",
+  "condition": "New",
+  "price": 34.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c7/Why_Lawd%3F.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "ThankU (Ft. Dave Chappelle)",
+      "duration": "0:50",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf074"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "86Sentra",
+      "duration": "1:36",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf075"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "MoveOn",
+      "duration": "2:47",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf076"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "KeepHer (Ft. Thundercat)",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf077"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Distractions",
+      "duration": "1:49",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf078"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Lookin’",
+      "duration": "0:54",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf079"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Where I Go (Ft. H.E.R.)",
+      "duration": "3:21",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07a"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Daydreaming",
+      "duration": "3:06",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07b"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "FromHere (Ft. Snoop Dogg & October London)",
+      "duration": "4:01",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07c"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "FallThru",
+      "duration": "2:21",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07d"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Battlefield",
+      "duration": "3:38",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07e"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "HereIAm",
+      "duration": "1:34",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf07f"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "OutTheWay (Ft. Rae Khalil)",
+      "duration": "3:26",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf080"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "SheUsed",
+      "duration": "2:36",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf081"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "MoreOfIt",
+      "duration": "1:12",
+      "_id": {
+        "$oid": "684b5dee39b220fab17cf082"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:08:39.245Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39c"
+  },
+  "title": "Yes Lawd!",
+  "artist": "NxWorries (Anderson .Paak & Knxwledge)",
+  "genre": "Neo Soul, R&B, Hip Hop",
+  "releaseYear": 2016,
+  "label": "Stones Throw Records",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/07/Nxworries_yeslawd_cover.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Intro",
+      "duration": "0:48",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3a6"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Livvin",
+      "duration": "2:45",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3a7"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Wngs",
+      "duration": "1:36",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3a8"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Best One",
+      "duration": "3:14",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3a9"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "What More Can I Say",
+      "duration": "2:36",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3aa"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Kutless",
+      "duration": "2:07",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3ab"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Lyk Dis",
+      "duration": "2:30",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3ac"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Can’t Stop",
+      "duration": "2:01",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3ad"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Get Bigger / Do U Luv",
+      "duration": "4:03",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3ae"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Khadijah",
+      "duration": "2:02",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3af"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "H.A.N.",
+      "duration": "2:49",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b0"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Scared Money",
+      "duration": "2:57",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b1"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Suede",
+      "duration": "2:54",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b2"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Starlite",
+      "duration": "3:23",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b3"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "Sidepiece",
+      "duration": "3:46",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b4"
+      }
+    },
+    {
+      "trackNumber": 16,
+      "title": "Jodi",
+      "duration": "1:09",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b5"
+      }
+    },
+    {
+      "trackNumber": 17,
+      "title": "Link Up",
+      "duration": "3:31",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b6"
+      }
+    },
+    {
+      "trackNumber": 18,
+      "title": "Another Time",
+      "duration": "2:27",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b7"
+      }
+    },
+    {
+      "trackNumber": 19,
+      "title": "Fkku",
+      "duration": "2:11",
+      "_id": {
+        "$oid": "684b5e1539b220fab17cf3b8"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:09:16.878Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39d"
+  },
+  "title": "The Colour and the Shape",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock",
+  "releaseYear": 1997,
+  "label": "Roswell Records, Capitol Records",
+  "condition": "New",
+  "price": 30.99,
+  "stock": 7,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0d/FooFighters-TheColourAndTheShape.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Doll",
+      "duration": "1:23",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6de"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Monkey Wrench",
+      "duration": "3:51",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6df"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Hey, Johnny Park!",
+      "duration": "4:08",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e0"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "My Poor Brain",
+      "duration": "3:34",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e1"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Wind Up",
+      "duration": "2:31",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e2"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Up in Arms",
+      "duration": "2:15",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e3"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "My Hero",
+      "duration": "4:20",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e4"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "See You",
+      "duration": "2:27",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e5"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Enough Space",
+      "duration": "2:36",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e6"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "February Stars",
+      "duration": "4:49",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e7"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Everlong",
+      "duration": "4:10",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e8"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Walking After You",
+      "duration": "5:04",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6e9"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "New Way Home",
+      "duration": "5:40",
+      "_id": {
+        "$oid": "684b5e4439b220fab17cf6ea"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:09:59.806Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39e"
+  },
+  "title": "There Is Nothing Left to Lose",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock",
+  "releaseYear": 1999,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 30.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8b/Foo_Fighters_-_There_Is_Nothing_Left_to_Lose.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Stacked Actors",
+      "duration": "4:17",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa02"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Breakout",
+      "duration": "3:21",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa03"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Learn to Fly",
+      "duration": "3:58",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa04"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Gimme Stitches",
+      "duration": "3:42",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa05"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Generator",
+      "duration": "3:48",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa06"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Aurora",
+      "duration": "5:50",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa07"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Live-In Skin",
+      "duration": "3:53",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa08"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Next Year",
+      "duration": "4:37",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa09"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Headwires",
+      "duration": "4:38",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa0a"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Ain't It the Life",
+      "duration": "4:37",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa0b"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "M.I.A.",
+      "duration": "4:03",
+      "_id": {
+        "$oid": "684b5e4b39b220fab17cfa0c"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:10:18.921Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf39f"
+  },
+  "title": "One by One",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock",
+  "releaseYear": 2002,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 7,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/06/Foo_Fighters_-_One_by_One.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "All My Life",
+      "duration": "4:23",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd20"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Low",
+      "duration": "4:28",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd21"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Have It All",
+      "duration": "4:57",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd22"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Times Like These",
+      "duration": "4:26",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd23"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Disenchanted Lullaby",
+      "duration": "4:33",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd24"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Tired of You",
+      "duration": "5:11",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd25"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Halo",
+      "duration": "5:06",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd26"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Lonely as You",
+      "duration": "4:37",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd27"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Overdrive",
+      "duration": "4:30",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd28"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Burn Away",
+      "duration": "4:58",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd29"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Come Back",
+      "duration": "7:51",
+      "_id": {
+        "$oid": "684b5e5d39b220fab17cfd2a"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:10:33.599Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a0"
+  },
+  "title": "In Your Honor",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock, Acoustic Rock",
+  "releaseYear": 2005,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/06/Foo_Fighters_-_One_by_One.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "In Your Honor",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0047"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "No Way Back",
+      "duration": "3:16",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0048"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Best of You",
+      "duration": "4:15",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0049"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "DOA",
+      "duration": "4:12",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004a"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Hell",
+      "duration": "1:57",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004b"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "The Last Song",
+      "duration": "3:19",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004c"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Free Me",
+      "duration": "4:38",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004d"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Resolve",
+      "duration": "4:48",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004e"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "The Deepest Blues Are Black",
+      "duration": "3:58",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d004f"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "End Over End",
+      "duration": "5:51",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0050"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Still",
+      "duration": "5:13",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0051"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "What If I Do?",
+      "duration": "5:02",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0052"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Miracle",
+      "duration": "3:29",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0053"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Another Round",
+      "duration": "4:25",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0054"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "Friend of a Friend",
+      "duration": "3:13",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0055"
+      }
+    },
+    {
+      "trackNumber": 16,
+      "title": "Over and Out",
+      "duration": "5:16",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0056"
+      }
+    },
+    {
+      "trackNumber": 17,
+      "title": "On the Mend",
+      "duration": "4:31",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0057"
+      }
+    },
+    {
+      "trackNumber": 18,
+      "title": "Virginia Moon",
+      "duration": "3:49",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0058"
+      }
+    },
+    {
+      "trackNumber": 19,
+      "title": "Cold Day in the Sun",
+      "duration": "3:20",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d0059"
+      }
+    },
+    {
+      "trackNumber": 20,
+      "title": "Razor",
+      "duration": "4:53",
+      "_id": {
+        "$oid": "684b5e7639b220fab17d005a"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:10:50.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a1"
+  },
+  "title": "Echoes, Silence, Patience & Grace",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock",
+  "releaseYear": 2007,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/68/Foos-ESPG.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "The Pretender",
+      "duration": "4:29",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0381"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Let It Die",
+      "duration": "4:05",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0382"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Erase/Replace",
+      "duration": "4:13",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0383"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Long Road to Ruin",
+      "duration": "3:44",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0384"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Come Alive",
+      "duration": "5:10",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0385"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Stranger Things Have Happened",
+      "duration": "5:21",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0386"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Cheer Up, Boys (Your Make-Up Is Running)",
+      "duration": "3:41",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0387"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Summer's End",
+      "duration": "4:37",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0388"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Ballad of the Beaconsfield Miners",
+      "duration": "2:32",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d0389"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Statues",
+      "duration": "3:47",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d038a"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "But, Honestly",
+      "duration": "4:35",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d038b"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Home",
+      "duration": "4:53",
+      "_id": {
+        "$oid": "684b5e8839b220fab17d038c"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:11:09.439Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a2"
+  },
+  "title": "Wasting Light",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Hard Rock, Post-Grunge",
+  "releaseYear": 2011,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/05/Foo_Fighters_Wasting_Light_Album_Cover.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Bridge Burning",
+      "duration": "4:47",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a2"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Rope",
+      "duration": "4:06",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a3"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Dear Rosemary",
+      "duration": "4:27",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a4"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "White Limo",
+      "duration": "3:22",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a5"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Arlandria",
+      "duration": "4:28",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a6"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "These Days",
+      "duration": "4:58",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a7"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Back & Forth",
+      "duration": "3:52",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a8"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "A Matter of Time",
+      "duration": "4:36",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06a9"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Miss the Misery",
+      "duration": "4:33",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06aa"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "I Should Have Known",
+      "duration": "4:16",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06ab"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Walk",
+      "duration": "4:16",
+      "_id": {
+        "$oid": "684b5e9439b220fab17d06ac"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:11:22.252Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a3"
+  },
+  "title": "Sonic Highways",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Post-Grunge, Hard Rock",
+  "releaseYear": 2014,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Foo_Fighters_8LP_Sonic_Highways.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Something from Nothing",
+      "duration": "4:49",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09bd"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "The Feast and the Famine",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09be"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Congregation",
+      "duration": "5:12",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09bf"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "What Did I Do?/God As My Witness",
+      "duration": "5:44",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09c0"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Outside",
+      "duration": "5:14",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09c1"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "In the Clear",
+      "duration": "4:04",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09c2"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Subterranean",
+      "duration": "6:08",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09c3"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "I Am a River",
+      "duration": "7:09",
+      "_id": {
+        "$oid": "684b5ea239b220fab17d09c4"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:11:37.432Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a4"
+  },
+  "title": "Concrete and Gold",
+  "artist": "Foo Fighters",
+  "genre": "Hard Rock, Progressive Rock",
+  "releaseYear": 2017,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e5/Concrete_and_Gold_Foo_Fighters_album.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "T-Shirt",
+      "duration": "1:23",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd2"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Run",
+      "duration": "5:23",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd3"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Make It Right",
+      "duration": "4:39",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd4"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "The Sky Is a Neighborhood",
+      "duration": "4:05",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd5"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "La Dee Da",
+      "duration": "4:03",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd6"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Dirty Water",
+      "duration": "5:21",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd7"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Arrows",
+      "duration": "4:26",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd8"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Happy Ever After (Zero Hour)",
+      "duration": "3:41",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cd9"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Sunday Rain",
+      "duration": "6:11",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cda"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "The Line",
+      "duration": "3:38",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cdb"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Concrete and Gold",
+      "duration": "5:38",
+      "_id": {
+        "$oid": "684b5eb939b220fab17d0cdc"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:11:56.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a5"
+  },
+  "title": "Medicine at Midnight",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Hard Rock, Pop Rock, Power Pop, Dance-Rock",
+  "releaseYear": 2021,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 31.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2f/Medicine_at_Midnight.jpeg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Making a Fire",
+      "duration": "4:15",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0fee"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Shame Shame",
+      "duration": "4:17",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0fef"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Cloudspotter",
+      "duration": "3:53",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff0"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Waiting on a War",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff1"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Medicine at Midnight",
+      "duration": "3:30",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff2"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "No Son of Mine",
+      "duration": "3:29",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff3"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Holding Poison",
+      "duration": "4:24",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff4"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Chasing Birds",
+      "duration": "4:12",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff5"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Love Dies Young",
+      "duration": "4:22",
+      "_id": {
+        "$oid": "684b5ec839b220fab17d0ff6"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:12:10.841Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a6"
+  },
+  "title": "But Here We Are",
+  "artist": "Foo Fighters",
+  "genre": "Alternative Rock, Arena Rock",
+  "releaseYear": 2023,
+  "label": "Roswell Records, RCA Records",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 5,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a8/Foo_Fighters_-_But_Here_We_Are.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Rescued",
+      "duration": "4:19",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d1305"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Under You",
+      "duration": "3:39",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d1306"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Hearing Voices",
+      "duration": "3:49",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d1307"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "But Here We Are",
+      "duration": "4:43",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d1308"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "The Glass",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d1309"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Nothing at All",
+      "duration": "3:28",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d130a"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Show Me How (Ft. Violet Grohl)",
+      "duration": "4:54",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d130b"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Beyond Me",
+      "duration": "3:54",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d130c"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "The Teacher",
+      "duration": "10:04",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d130d"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Rest",
+      "duration": "5:34",
+      "_id": {
+        "$oid": "684b5eed39b220fab17d130e"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:12:48.509Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a7"
+  },
+  "title": "Insomniac",
+  "artist": "Green Day",
+  "genre": "Punk Rock, Alternative Rock",
+  "releaseYear": 1995,
+  "label": "Reprise Records",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bd/Green_Day_Insomiac.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Armatage Shanks",
+      "duration": "2:17",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1623"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Brat",
+      "duration": "1:43",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1624"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Stuck with Me",
+      "duration": "2:07",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1625"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Geek Stink Breath",
+      "duration": "2:15",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1626"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "No Pride",
+      "duration": "2:19",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1627"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Bab's Uvula Who?",
+      "duration": "2:08",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1628"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "86",
+      "duration": "2:48",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1629"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Panic Song",
+      "duration": "3:35",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162a"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Stuart and the Ave.",
+      "duration": "2:03",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162b"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Brain Stew",
+      "duration": "3:13",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162c"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Jaded",
+      "duration": "1:30",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162d"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Westbound Sign",
+      "duration": "2:13",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162e"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Tight Wad Hill",
+      "duration": "2:01",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d162f"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "Walking Contradiction",
+      "duration": "2:31",
+      "_id": {
+        "$oid": "684b5efc39b220fab17d1630"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:13:15.239Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a8"
+  },
+  "title": "Discovering the Waterfront",
+  "artist": "Silverstein",
+  "genre": "Post-Hardcore, Emo, Screamo, Pop Punk",
+  "releaseYear": 2005,
+  "label": "Victory Records",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/82/Discovering_the_waterfront_cover.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Your Sword Versus My Dagger",
+      "duration": "2:59",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194a"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Smile in Your Sleep",
+      "duration": "3:14",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194b"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "The Ides of March",
+      "duration": "3:27",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194c"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Fist Wrapped in Blood",
+      "duration": "2:57",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194d"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Discovering the Waterfront",
+      "duration": "4:45",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194e"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Defend You",
+      "duration": "3:28",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d194f"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "My Heroine",
+      "duration": "3:28",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d1950"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Always and Never",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d1951"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Already Dead",
+      "duration": "3:17",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d1952"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Three Hours Back",
+      "duration": "3:35",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d1953"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Call It Karma",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5f1e39b220fab17d1954"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:13:37.439Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3a9"
+  },
+  "title": "When Broken Is Easily Fixed",
+  "artist": "Silverstein",
+  "genre": "Post-Hardcore, Emo, Screamo",
+  "releaseYear": 2003,
+  "label": "Victory Records",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/66/SilversteinWhenBrokenIsEasilyFixed.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Smashed Into Pieces",
+      "duration": "3:04",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c69"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Red Light Pledge",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6a"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Giving Up",
+      "duration": "3:10",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6b"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "November",
+      "duration": "3:05",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6c"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Last Days of Summer",
+      "duration": "3:07",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6d"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Bleeds No More",
+      "duration": "3:16",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6e"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Hear Me Out",
+      "duration": "3:33",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c6f"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "The Weak and the Wounded",
+      "duration": "3:14",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c70"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Wish I Could Forget You",
+      "duration": "3:27",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c71"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "When Broken Is Easily Fixed (Ft. Kyle Bishop)",
+      "duration": "4:19",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c72"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Friends in Fall River",
+      "duration": "2:43",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c73"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Forever and a Day",
+      "duration": "3:22",
+      "_id": {
+        "$oid": "684b5f2c39b220fab17d1c74"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:14:05.364Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3aa"
+  },
+  "title": "Get Rich or Die Tryin'",
+  "artist": "50 Cent",
+  "genre": "East Coast Hip Hop, Hardcore Hip Hop, Gangsta Rap, Boom Bap",
+  "releaseYear": 2003,
+  "label": "Interscope Records, Shady Records, Aftermath Entertainment, G-Unit Records",
+  "condition": "New",
+  "price": 29.99,
+  "stock": 7,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/9d/Get_Rich_Or_Die_Tryin%27.JPG",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Intro",
+      "duration": "0:06",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f8f"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "What Up Gangsta",
+      "duration": "2:59",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f90"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Patiently Waiting (Ft. Eminem)",
+      "duration": "4:48",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f91"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Many Men (Wish Death)",
+      "duration": "4:16",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f92"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "In da Club",
+      "duration": "3:13",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f93"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "High All the Time",
+      "duration": "4:29",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f94"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Heat",
+      "duration": "4:14",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f95"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "If I Can't",
+      "duration": "3:16",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f96"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Blood Hound (Ft. Young Buck)",
+      "duration": "4:00",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f97"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Back Down",
+      "duration": "4:03",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f98"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "P.I.M.P.",
+      "duration": "4:09",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f99"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Like My Style (Ft. Tony Yayo)",
+      "duration": "3:13",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f9a"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Poor Lil Rich",
+      "duration": "3:19",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f9b"
+      }
+    },
+    {
+      "trackNumber": 14,
+      "title": "21 Questions (Ft. Nate Dogg)",
+      "duration": "3:44",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f9c"
+      }
+    },
+    {
+      "trackNumber": 15,
+      "title": "Don't Push Me (Ft. Eminem & Lloyd Banks)",
+      "duration": "4:09",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f9d"
+      }
+    },
+    {
+      "trackNumber": 16,
+      "title": "Gotta Make It to Heaven",
+      "duration": "4:00",
+      "_id": {
+        "$oid": "684b5f4439b220fab17d1f9e"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:14:26.994Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3ab"
+  },
+  "title": "4 Your Eyez Only",
+  "artist": "J. Cole",
+  "genre": "Hip Hop, Conscious Rap",
+  "releaseYear": 2016,
+  "label": "Dreamville, Roc Nation, Interscope Records",
+  "condition": "New",
+  "price": 30.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bb/J._Cole_%E2%80%94_4_Your_Eyez_Only_album_cover.jpg",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "For Whom the Bell Tolls",
+      "duration": "2:07",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22bb"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "Immortal",
+      "duration": "3:21",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22bc"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Deja Vu",
+      "duration": "4:26",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22bd"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Ville Mentality",
+      "duration": "3:29",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22be"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "She's Mine Pt. 1",
+      "duration": "3:50",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22bf"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Change",
+      "duration": "5:31",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22c0"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Neighbors",
+      "duration": "3:36",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22c1"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Foldin Clothes",
+      "duration": "5:02",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22c2"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "She's Mine Pt. 2",
+      "duration": "4:39",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22c3"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "4 Your Eyez Only",
+      "duration": "8:50",
+      "_id": {
+        "$oid": "684b5f6239b220fab17d22c4"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:14:47.708Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682e2a724675075e0f0cf3ac"
+  },
+  "title": "Anti",
+  "artist": "Rihanna",
+  "genre": "Pop, Dancehall, Psychedelic Soul, Alternative R&B",
+  "releaseYear": 2016,
+  "label": "Westbury Road, Roc Nation",
+  "condition": "New",
+  "price": 32.99,
+  "stock": 6,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/32/Rihanna_-_Anti.png",
+  "trackListing": [
+    {
+      "trackNumber": 1,
+      "title": "Consideration (Ft. SZA)",
+      "duration": "2:41",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25d8"
+      }
+    },
+    {
+      "trackNumber": 2,
+      "title": "James Joint",
+      "duration": "1:12",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25d9"
+      }
+    },
+    {
+      "trackNumber": 3,
+      "title": "Kiss It Better",
+      "duration": "4:13",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25da"
+      }
+    },
+    {
+      "trackNumber": 4,
+      "title": "Work (Ft. Drake)",
+      "duration": "3:39",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25db"
+      }
+    },
+    {
+      "trackNumber": 5,
+      "title": "Desperado",
+      "duration": "3:06",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25dc"
+      }
+    },
+    {
+      "trackNumber": 6,
+      "title": "Woo",
+      "duration": "3:55",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25dd"
+      }
+    },
+    {
+      "trackNumber": 7,
+      "title": "Needed Me",
+      "duration": "3:11",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25de"
+      }
+    },
+    {
+      "trackNumber": 8,
+      "title": "Yeah, I Said It",
+      "duration": "2:13",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25df"
+      }
+    },
+    {
+      "trackNumber": 9,
+      "title": "Same Ol' Mistakes",
+      "duration": "6:37",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25e0"
+      }
+    },
+    {
+      "trackNumber": 10,
+      "title": "Never Ending",
+      "duration": "3:23",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25e1"
+      }
+    },
+    {
+      "trackNumber": 11,
+      "title": "Love on the Brain",
+      "duration": "3:44",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25e2"
+      }
+    },
+    {
+      "trackNumber": 12,
+      "title": "Higher",
+      "duration": "2:01",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25e3"
+      }
+    },
+    {
+      "trackNumber": 13,
+      "title": "Close to You",
+      "duration": "3:42",
+      "_id": {
+        "$oid": "684b5f7639b220fab17d25e4"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-12T23:15:10.102Z"
+  }
+}]
