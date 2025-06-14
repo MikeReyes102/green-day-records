@@ -114,6 +114,26 @@ const api = {
     }
   },
 
+  /**
+   * ✅ Create a new product
+   * @param {Object} productData - Product details to be stored
+   * @returns {Promise<Object>} Created product data or error message
+   */
+  createProduct: async (productData) => {
+    try {
+      if (isDev) console.log("🆕 Creating new product:", productData);
+
+      const response = await axios.post("/products", productData);
+
+      if (isDev) console.log("✅ Product created successfully:", response.data);
+
+      return response.data;
+    } catch (err) {
+      console.error("❌ Error creating product:", err);
+      throw new Error("Failed to create product.");
+    }
+  },
+
   updateProduct: async (productId, productData) => {
     try {
       if (isDev)
@@ -141,6 +161,8 @@ const api = {
       throw new Error("Failed to delete product.");
     }
   },
+
+  
 
   // Order Methods
   createCheckoutSession: async (cart) => {

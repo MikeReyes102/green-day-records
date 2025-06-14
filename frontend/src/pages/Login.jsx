@@ -1,40 +1,47 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import routing utilities
-import useTheme from "../hooks/useTheme"; // Custom hook for theme
-import api from "../utils/api"; // API utility for backend requests
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import useTheme from "../hooks/useTheme";
+import api from "../utils/api";
 
 const Login = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  // ✅ Use state for controlled inputs
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
+  const [userRole, setUserRole] = useState(localStorage.getItem("role") || ""); // ✅ Track role state
 
-  // ✅ Handle form submission for login
+  // ✅ Watch for role changes in localStorage and update state
+  useEffect(() => {
+    const handleRoleChange = () => {
+      setUserRole(localStorage.getItem("role")); // ✅ Update state when role changes
+    };
+
+    window.addEventListener("storage", handleRoleChange);
+    return () => window.removeEventListener("storage", handleRoleChange);
+  }, []);
+
+  // ✅ Handle login
   const handleLogin = async (event) => {
     event.preventDefault();
 
     try {
-      // ✅ Login user via API
       const result = await api.loginUser(email, password);
 
       if (result.error) {
-        setErrorMessage(result.error); // ✅ Display error message in UI
+        setErrorMessage(result.error);
       } else {
-        // ✅ Get stored role from localStorage (already handled in `api.js`)
-        const role = localStorage.getItem("role");
-
-        // ✅ Redirect based on role
-        navigate(role === "admin" ? "/admin" : "/dashboard");
-
-        console.log("✅ Login successful:", result);
+        setUserRole(result.role); // ✅ Trigger state update
+        console.log("✅ Login successful:", userRole);
+        navigate(result.role === "admin" ? "/admin" : "/dashboard");
+        window.location.reload(); // ✅ Ensure all components recognize the new auth state
       }
     } catch (error) {
       console.error("❌ Login failed:", error);
       setErrorMessage("Login failed. Please try again.");
     }
+
   };
 
   return (
@@ -42,33 +49,29 @@ const Login = () => {
       <div className="w-full max-w-md p-6 rounded-lg container">
         <h1 className="text-3xl font-bold text-center">Login</h1>
 
-        {/* Display error message if login fails */}
         {errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
 
         <form className="flex flex-col gap-4 w-full mt-4" onSubmit={handleLogin}>
-          {/* Email input */}
           <input
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} // ✅ Controlled input
+            onChange={(e) => setEmail(e.target.value)}
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
-          {/* Password input */}
+          
           <input
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // ✅ Controlled input
+            onChange={(e) => setPassword(e.target.value)}
             className="px-4 py-2 w-full rounded bg-nav-bg-color border border-secondary-accent text-text"
           />
 
-          {/* Login button */}
           <button type="submit" className="px-4 py-2 w-full primary-btn rounded-md transition">
             Login
           </button>
 
-          {/* Cancel button, returns to home */}
           <Link to="/" className="w-full">
             <button className="px-4 py-2 w-full secondary-btn rounded-md transition">
               Cancel
