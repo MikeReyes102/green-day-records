@@ -24,8 +24,9 @@ const createCheckoutSession = async (req, res) => {
         },
         quantity: 1, // Set quantity to 1 for each item
       })),
-      success_url: "http://localhost:5173/success", // Redirect URL on success
-      cancel_url: "http://localhost:5173/cart", // Redirect URL if canceled
+      // The URLs can be switch to localhost for local environments
+      success_url: "https://green-day-records.netlify.app/success", // Redirect URL on success 
+      cancel_url: "https://green-day-records.netlify.app/cart", // Redirect URL if canceled
     });
 
     // Respond with the session URL for the client to redirect to Stripe Checkout
