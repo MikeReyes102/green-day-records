@@ -35,7 +35,6 @@ const Login = () => {
         setUserRole(result.role); // ✅ Trigger state update
         console.log("✅ Login successful:", userRole);
         navigate(result.role === "admin" ? "/admin" : "/dashboard");
-        window.location.reload(); // ✅ Ensure all components recognize the new auth state
       }
     } catch (error) {
       console.error("❌ Login failed:", error);
