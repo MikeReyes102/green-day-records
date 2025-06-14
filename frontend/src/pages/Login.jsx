@@ -34,8 +34,8 @@ const Login = () => {
       } else {
         setUserRole(result.role); // ✅ Trigger state update
         console.log("✅ Login successful:", userRole);
-        window.location.reload();
         navigate(result.role === "admin" ? "/admin" : "/dashboard");
+        window.location.reload();
       }
     } catch (error) {
       console.error("❌ Login failed:", error);
