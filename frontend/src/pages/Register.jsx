@@ -26,6 +26,7 @@ const Register = () => {
       } else {
         localStorage.setItem("token", result.token);
         navigate("/dashboard");
+        window.location.reload();
 
         console.log("✅ Registration successful:", result);
       }
